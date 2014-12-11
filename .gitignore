@@ -1,0 +1,10 @@
+# IONIC
+platforms/
+www/css/*.css
+www/lib/
+
+# NODE
+node_modules/
+
+# PHPSTORM
+.idea/
