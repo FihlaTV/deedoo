@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('deedoo', ['ionic', 'firebase'])
 
     /*
@@ -9,7 +11,8 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
             if (window.StatusBar) {
-                StatusBar.styleDefault();
+                StatusBar.hide();
+                //StatusBar.styleDefault();
             }
         });
     })
@@ -62,7 +65,6 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             });
 
-        var otherwise = (!config.intro) ? '/tutorial' : '/home';
-        $urlRouterProvider.otherwise(otherwise);
+        $urlRouterProvider.otherwise((!config.intro) ? '/tutorial' : '/home');
         
     });
