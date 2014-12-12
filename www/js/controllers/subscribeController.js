@@ -5,10 +5,10 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
     var ref         = new Firebase(config.firebaseUrl + 'MEMBERS'),
         sync        = $firebase(ref),
         members     = $firebase(ref).$asArray(),
-        good        = true,
         children    = [];
 
     $rootScope.subscribeData = {};
+    $rootScope.subscribeGood = true;
 
     /*
      * Subscribe the USER
@@ -22,15 +22,15 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
             // User with the same Mail OR phone can't subscribe
             for (var i = 0; i < result.length; i++) {
                 if (members[i].mail == subscribeData.email) {
-                    good += '[INVALID] : Same EMail';
+                    $rootScope.subscribeGood = '[INVALID] : Same EMail';
                 }
                 else if (members[i].phone == subscribeData.phone) {
-                    good += '[INVALID] : Same Phone'
+                    $rootScope.subscribeGood = '[INVALID] : Same Phone'
                 }
             }
 
             // If Good Subscribe
-            if (good) {
+            if ($rootScope.subscribeGood) {
 
                 // TODO Change this
                 if (angular.isDefined(subscribeData.children)) {
