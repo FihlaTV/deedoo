@@ -12,29 +12,29 @@
 
         <h1>Ajouter un BabySitting</h1>
 
-        <form>
+        <form ng-submit="createTask()">
             <div class="list list-inset">
                 <!-- Date -->
                 <label class="item item-input">
                     <span class="input-label">Date</span>
-                    <input type="date">
+                    <input type="date" ng-model="newTaskForm.date">
                 </label>
                 <!-- Time Start -->
                 <label class="item item-input">
                     <span class="input-label">Heure de début</span>
-                    <input type="time">
+                    <input type="time" ng-model="newTaskForm.timeStart">
                 </label>
                 <!-- Time End -->
                 <label class="item item-input">
                     <span class="input-label">Heure de fin</span>
-                    <input type="time">
+                    <input type="time" ng-model="newTaskForm.timeEnd">
                 </label>
                 <!-- BabySitter -->
                 <label class="item item-input item-select">
                 <div class="input-label">
                     Baby-Sitter
                 </div>
-                <select>
+                <select ng-model="newTaskForm.babysitterId">
                     <option ng-repeat="babysitter in babysitters" value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
                 </select>
                 </label>
