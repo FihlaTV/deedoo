@@ -2,13 +2,17 @@
 
 angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $firebase, config) {
 
-    var ref     = new Firebase('https://radiant-inferno-550.firebaseio.com/MEMBERS'),
-        sync    = $firebase(ref),
-        members = $firebase(ref).$asArray(),
-        good    = true;
+    var ref         = new Firebase(config.firebaseUrl + 'MEMBERS'),
+        sync        = $firebase(ref),
+        members     = $firebase(ref).$asArray(),
+        good        = true,
+        children    = [];
 
     $rootScope.subscribeData = {};
 
+    /*
+     * Subscribe the USER
+     */
     $scope.subscribe = function () {
 
         var subscribeData = $rootScope.subscribeData;
@@ -27,8 +31,25 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
 
             // If Good Subscribe
             if (good) {
+
+                // TODO Change this
+                if (angular.isDefined(subscribeData.children)) {
+                    if (angular.isDefined(subscribeData.children.one)) {
+                        children.push(subscribeData.children.one);
+                    }
+                    if (angular.isDefined(subscribeData.children.two)) {
+                        children.push(subscribeData.children.two);
+                    }
+                    if (angular.isDefined(subscribeData.children.three)) {
+                        children.push(subscribeData.children.three);
+                    }
+                    if (angular.isDefined(subscribeData.children.four)) {
+                        children.push(subscribeData.children.four);
+                    }
+                }
+
                 sync.$set(result.length, {
-                    "children" : ["Emilie", "Mathieu"],
+                    "children" : children,
                     "firstname": subscribeData.firstname,
                     "lastname" : subscribeData.lastname,
                     "mail"     : subscribeData.email,
@@ -36,8 +57,8 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                     "phone"    : subscribeData.phone,
                     "type"     : subscribeData.type
                 });
-            }
 
+            }
 
         });
 

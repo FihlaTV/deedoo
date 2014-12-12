@@ -34,8 +34,19 @@
 
                 <div class="list">
                     <center>Vos enfants ...</center>
-                    <div class="list list-inset">
-
+                    <div class="list list-inset" id="inputList">
+                        <label class="item item-input">
+                            <input type="text" placeholder="Prenom" ng-model="subscribeData.children.one">
+                        </label>
+                        <label class="item item-input" ng-show="subscribeData.children.one">
+                            <input type="text" placeholder="Prenom" ng-model="subscribeData.children.two">
+                        </label>
+                        <label class="item item-input" ng-show="subscribeData.children.two">
+                            <input type="text" placeholder="Prenom" ng-model="subscribeData.children.three">
+                        </label>
+                        <label class="item item-input" ng-show="subscribeData.children.three">
+                            <input type="text" placeholder="Prenom" ng-model="subscribeData.children.four">
+                        </label>
                     </div>
                 </div>
             </div>

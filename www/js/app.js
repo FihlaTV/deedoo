@@ -20,7 +20,6 @@ angular.module('deedoo', ['ionic', 'firebase'])
      * CONFIG
      */
     .constant('config', {
-        'appFirebaseName': 'radiant-inferno-550',
         'firebaseUrl'    : 'https://radiant-inferno-550.firebaseio.com/',
         'intro'          : false,
         'user'           : {}

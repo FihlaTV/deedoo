@@ -1,10 +1,13 @@
 'use strict';
 
-angular.module('deedoo').controller('loginController', function ($scope, $firebase, config) {
+angular.module('deedoo').controller('loginController', function ($scope, $state, $firebase, config) {
 
-    var ref = new Firebase('https://radiant-inferno-550.firebaseio.com/MEMBERS');
-    var members = $firebase(ref).$asArray();
+    var ref     = new Firebase(config.firebaseUrl+'MEMBERS'),
+        members = $firebase(ref).$asArray();
 
+    /*
+     * Connect the USER
+     */
     $scope.connect = function () {
 
         members.$loaded().then(function (result) {
@@ -13,6 +16,8 @@ angular.module('deedoo').controller('loginController', function ($scope, $fireba
 
                 if (members[i].mail == $scope.data.email && members[i].password == $scope.data.password) {
                     config.user = members[i]; // Save User
+                    // TODO Activate the redirection
+                    //$state.go('');
                 }
 
             }
