@@ -22,6 +22,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
     .constant('config', {
         'firebaseUrl'    : 'https://radiant-inferno-550.firebaseio.com/',
         'intro'          : false,
+        'logged'         : false,
         'user'           : {},
         'sold'           : 'y47]htAA9)4yS&V'
     })
@@ -64,6 +65,16 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 views: {
                     '': {
                         templateUrl: 'templates/connect.html'
+                    }
+                }
+            })
+
+            // New Task (Parent Only)
+            .state('newTask', {
+                url  : '/newtask',
+                views: {
+                    '': {
+                        templateUrl: 'templates/new_task.html'
                     }
                 }
             })
