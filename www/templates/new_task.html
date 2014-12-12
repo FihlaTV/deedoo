@@ -3,7 +3,7 @@
     <!-- Header -->
     <ion-header-bar class="top_bar">
         <a ui-sref="help" menu-toggle="left" class="button button-icon icon ion-help-circled"></a>
-        <h1 class="title">Test</h1>
+        <h1 class="title">LOGO</h1>
         <a ui-sref="profil" menu-toggle="right" class="button button-icon icon ion-person"></a>
     </ion-header-bar>
 
@@ -11,7 +11,38 @@
     <ion-content class="padding" ng-controller="newTaskController">
 
         <h1>Ajouter un BabySitting</h1>
-        
+
+        <form>
+            <div class="list list-inset">
+                <!-- Date -->
+                <label class="item item-input">
+                    <span class="input-label">Date</span>
+                    <input type="date">
+                </label>
+                <!-- Time Start -->
+                <label class="item item-input">
+                    <span class="input-label">Heure de début</span>
+                    <input type="time">
+                </label>
+                <!-- Time End -->
+                <label class="item item-input">
+                    <span class="input-label">Heure de fin</span>
+                    <input type="time">
+                </label>
+                <!-- BabySitter -->
+                <label class="item item-input item-select">
+                <div class="input-label">
+                    Baby-Sitter
+                </div>
+                <select>
+                    <option ng-repeat="babysitter in babysitters" value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
+                </select>
+                </label>
+            </div>
+            <div class="padding">
+                <input type="submit" class="button button-block button-positive" value="Envoyer la demande">
+            </div>
+        </form>
 
     </ion-content>
 
