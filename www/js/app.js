@@ -20,9 +20,10 @@ angular.module('deedoo', ['ionic', 'firebase'])
      * CONFIG
      */
     .constant('config', {
-        'appFirebaseName': 'deedoo',
-        'firebaseUrl'    : 'https://' + this.appFirebaseName + '.firebaseio.com/',
-        'intro'          : false
+        'appFirebaseName': 'radiant-inferno-550',
+        'firebaseUrl'    : 'https://radiant-inferno-550.firebaseio.com/',
+        'intro'          : false,
+        'user'           : {}
     })
 
     /*
@@ -56,6 +57,16 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
+            // Home page with Subscribe & Login
+            .state('connect', {
+                url  : '/connect',
+                views: {
+                    '': {
+                        templateUrl: 'templates/connect.html'
+                    }
+                }
+            })
+
             .state('tab.test', {
                 url: '/test',
                 views: {
@@ -65,6 +76,6 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             });
 
-        $urlRouterProvider.otherwise((!config.intro) ? '/tutorial' : '/home');
+        $urlRouterProvider.otherwise((!config.intro) ? '/connect' : '/home');
         
     });
