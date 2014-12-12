@@ -31,6 +31,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
      */
     .config(function ($stateProvider, $urlRouterProvider, config) {
         $stateProvider
+        
             // Menu
             .state('tab', {
                 url        : "/tab",
@@ -57,12 +58,22 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
-            // Home page with Subscribe & Login
+            // Connect Page
             .state('connect', {
                 url  : '/connect',
                 views: {
                     '': {
                         templateUrl: 'templates/connect.html'
+                    }
+                }
+            })
+
+            // Subscribe Page
+            .state('subscribe', {
+                url  : '/subscribe',
+                views: {
+                    '': {
+                        templateUrl: 'templates/subscribe.html'
                     }
                 }
             })
