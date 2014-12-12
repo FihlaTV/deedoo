@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $firebase, config) {
+angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $state, $firebase, config) {
 
     var ref         = new Firebase(config.firebaseUrl + 'MEMBERS'),
         sync        = $firebase(ref),
@@ -56,6 +56,9 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                     "password" : subscribeData.password,
                     "phone"    : subscribeData.phone,
                     "type"     : subscribeData.type
+                }).then(function(){
+                    // TODO Activate the redirection
+                    //$state.go('');
                 });
 
             }
