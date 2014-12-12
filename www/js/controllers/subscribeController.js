@@ -29,9 +29,6 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                 }
             }
 
-            console.log($filter('hash')(subscribeData.password));
-            return;
-
             // If Good Subscribe
             if ($rootScope.subscribeGood) {
 
