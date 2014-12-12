@@ -49,16 +49,6 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
-            // Home page with Subscribe & Login
-            .state('home', {
-                url  : '/home',
-                views: {
-                    '': {
-                        templateUrl: 'templates/home.html'
-                    }
-                }
-            })
-
             // Connect Page
             .state('connect', {
                 url  : '/connect',
@@ -98,6 +88,6 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             });
 
-        $urlRouterProvider.otherwise((!config.intro) ? '/connect' : '/home');
+        $urlRouterProvider.otherwise((!config.intro) ? '/tutorial' : '/connect');
         
     });
