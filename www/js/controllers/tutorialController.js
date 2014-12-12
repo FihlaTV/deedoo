@@ -9,5 +9,5 @@ angular.module('deedoo').controller('tutorialController', function ($scope, $sta
         config.intro = true;
         $state.go('connect');
     };
-    
+
 });
