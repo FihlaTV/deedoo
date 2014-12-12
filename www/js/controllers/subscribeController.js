@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $state, $firebase, config) {
+angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $state, $filter, $firebase, config) {
 
     var ref         = new Firebase(config.firebaseUrl + 'MEMBERS'),
         sync        = $firebase(ref),
@@ -29,6 +29,9 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                 }
             }
 
+            console.log($filter('hash')(subscribeData.password));
+            return;
+
             // If Good Subscribe
             if ($rootScope.subscribeGood) {
 
@@ -53,7 +56,7 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                     "firstname": subscribeData.firstname,
                     "lastname" : subscribeData.lastname,
                     "mail"     : subscribeData.email,
-                    "password" : subscribeData.password,
+                    "password" : $filter('hash')(subscribeData.password+config.sold),
                     "phone"    : subscribeData.phone,
                     "type"     : subscribeData.type
                 }).then(function(){

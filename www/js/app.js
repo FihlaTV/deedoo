@@ -22,7 +22,8 @@ angular.module('deedoo', ['ionic', 'firebase'])
     .constant('config', {
         'firebaseUrl'    : 'https://radiant-inferno-550.firebaseio.com/',
         'intro'          : false,
-        'user'           : {}
+        'user'           : {},
+        'sold'           : 'y47]htAA9)4yS&V'
     })
 
     /*
