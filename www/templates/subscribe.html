@@ -1,12 +1,19 @@
+<!-- Header -->
+<ion-header-bar class="top_bar">
+    <h1 class="title">
+        <img src="img/deedoo.png" alt="Logo Deedo" width="30%" height="60%"/>
+    </h1>
+</ion-header-bar>
+
 <form class="subscribeForm" ng-controller="subscribeController" ng-submit="subscribe()">
-    <ion-slide-box show-pager="true" class="intro green">
+    <ion-slide-box show-pager="true" class="intro">
         <!-- Select TYPE (parent/babysitter) -->
         <ion-slide>
-            <div class="subscribe_step1">
+            <div class="subscribe">
                 <h1>Inscription</h1>
 
-                <div class="list list-inset">
-                    <center>Etes-vous ...</center>
+                <div class="list">
+                    <h2 class="center">Etes-vous ...</h2>
                     <label class="item item-radio">
                         <input type="radio" name="group" value="parent" ng-model="subscribeData.type">
 
@@ -29,12 +36,12 @@
         </ion-slide>
         <!-- Add Children -->
         <ion-slide>
-            <div class="subscribe_step2">
+            <div class="subscribe">
                 <h1>Inscription</h1>
 
                 <div class="list">
-                    <center>Vos enfants ...</center>
-                    <div class="list list-inset" id="inputList">
+                    <h2 class="center">Qui sont vos enfants ?</h2>
+                    <div class="list">
                         <label class="item item-input">
                             <input type="text" placeholder="Prenom" ng-model="subscribeData.children.one">
                         </label>
@@ -53,11 +60,11 @@
         </ion-slide>
         <!-- Information about US -->
         <ion-slide>
-            <div class="subscribe_step3">
+            <div class="subscribe aboutUs">
                 <h1>Inscription</h1>
 
-                <div class="list list-inset">
-                    <center>Vos informations ...</center>
+                <div class="list">
+                    <h2 class="center aboutUs">Informations personnelles</h2>
                     <label class="item item-input">
                         <input type="text" placeholder="Nom" ng-model="subscribeData.lastname">
                     </label>
@@ -65,17 +72,15 @@
                         <input type="text" placeholder="Prénom" ng-model="subscribeData.firstname">
                     </label>
                     <label class="item item-input">
-                        <input type="email" placeholder="Email" ng-model="subscribeData.email">
+                        <input type="email" placeholder="E-mail" ng-model="subscribeData.email">
                     </label>
                     <label class="item item-input">
                         <input type="password" placeholder="Mot de passe" ng-model="subscribeData.password">
                     </label>
                     <label class="item item-input">
-                        <input type="tel" placeholder="Mobile" ng-model="subscribeData.phone">
+                        <input type="tel" placeholder="N° de mobile" ng-model="subscribeData.phone">
                     </label>
-                </div>
-                <div class="padding">
-                    <input type="submit" class="button button-block button-positive" value="Commencer">
+                    <input type="submit" class="btn btn-green" value="Commencer">
                 </div>
             </div>
         </ion-slide>

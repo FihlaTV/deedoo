@@ -61,7 +61,7 @@ $gray: #A2A2A2 !default;
   line-height: 2em;
 }
 
-.content {
+.content, .subscribe {
   background-color: $content;
   h1{
     font-family: 'Source Sans Pro', sans-serif;
