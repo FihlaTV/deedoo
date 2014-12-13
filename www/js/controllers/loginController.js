@@ -6,11 +6,6 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
         members = $firebase(ref).$asArray();
 
     /*
-     * Show StatusBar
-     */
-    StatusBar.show();
-
-    /*
      * Connect the USER
      */
     $scope.connect = function () {

@@ -8,6 +8,7 @@ angular.module('deedoo').controller('tutorialController', function ($scope, $sta
     $scope.endTutorial = function () {
         config.intro = true;
         $state.go('connect');
+        StatusBar.show(); // Show StatusBar
     };
 
 });
