@@ -9,18 +9,25 @@ $gray: #A2A2A2 !default;
 /*
  * LOGO
  */
+.top_bar {
+  a {
+    color: white !important;
+  }
+}
+
 .deedoo {
-  width: 100%;
-  height: 16%;
+  width: 150px;
+  height: 100%;
   display: inline-block;
-  background: url('../img/deedoo.png') no-repeat bottom;
-  background-size: 35% 35%;
+  margin: auto;
+  background: url('../img/deedoo.svg') no-repeat center;
+  background-size: 70% 70%;
 }
 
 /*
  * BTN(s)
  */
-.btn{
+.btn {
   width: 95% !important;
   display: block;
   margin: auto;
@@ -30,6 +37,7 @@ $gray: #A2A2A2 !default;
   border: none;
   border-radius: 5px;
 }
+
 .btn-light {
   width: 60%;
   display: block;
@@ -44,6 +52,7 @@ $gray: #A2A2A2 !default;
   border: 1px solid white;
   border-radius: 10px;
 }
+
 .btn-green {
   background-color: $green;
   color: white;
@@ -52,6 +61,7 @@ $gray: #A2A2A2 !default;
   text-align: center;
   line-height: 2em;
 }
+
 .btn-gray {
   background-color: $gray;
   color: white;
@@ -66,7 +76,7 @@ $gray: #A2A2A2 !default;
  */
 .content, .subscribe {
   background-color: $content;
-  h1{
+  h1 {
     font-family: 'Source Sans Pro', sans-serif;
     color: $green;
     text-align: center;
@@ -76,11 +86,12 @@ $gray: #A2A2A2 !default;
 /*
  * TOP BAR
  */
-.top_bar{
+.top_bar {
   background-color: $green;
 }
-.title{
-  img{
+
+.title {
+  img {
     display: inline-block;
     margin: auto;
     margin-top: 10px;
@@ -90,15 +101,17 @@ $gray: #A2A2A2 !default;
     margin-top: 5px;
     color: white !important;
   }
-  .right{
+  .right {
     float: right;
     margin-top: 5px;
     color: white !important;
   }
 }
-.input{
+
+.input {
   font-family: 'Source Sans Pro', sans-serif;
 }
-.item-input{
+
+.item-input {
   padding: 2px 0 5px 16px !important;
 }

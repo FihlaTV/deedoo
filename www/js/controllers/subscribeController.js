@@ -57,8 +57,14 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                     "phone"    : subscribeData.phone,
                     "type"     : subscribeData.type
                 }).then(function(){
-                    // TODO Activate the redirection
-                    //$state.go('');
+                    if(subscribeData.type == 'parent'){
+
+                        $state.go('newTask');
+                    }
+                    else{
+                        // TODO Activate the redirection
+                        //$state.go('');
+                    }
                 });
 
             }

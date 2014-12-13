@@ -1,20 +1,16 @@
-.intro{
-	width: 100%;
-	height: 100%;
-	background-color: white;
+.subscribeForm {
+  width: 100%;
+  height: 100%;
+  background-color: $content;
 }
-.subscribeForm{
-	width: 100%;
-	height: 100%;
-	background-color: $content;
-}
-.subscribe{
-  h1{
+
+.subscribe {
+  h1 {
     font-size: 1.7em;
     padding-top: 30%;
     padding-bottom: 10%;
   }
-  .center{
+  .center {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.1em;
     color: #929292;
@@ -22,11 +18,12 @@
     margin-bottom: 10%;
   }
 }
-.aboutUs{
-  h1{
+
+.aboutUs {
+  h1 {
     padding-bottom: 5%;
   }
-  .btn-green{
+  .btn-green {
     margin-top: 5%;
   }
 }

@@ -14,23 +14,10 @@ angular.module('deedoo').controller('notificationController', function ($rootSco
     }
 
     /*
-     * Back to current Task adding
-     */
-    $scope.backTask = function () {
-        console.log($scope.notifications);
-    };
-
-    /*
      * Change Status Notification
      */
     $scope.confirmNotification = function (id) {
-        if ($rootScope.notifications[id].added) {
-            $rootScope.notifications[id].added = false
-        }
-        else {
-            $rootScope.notifications[id].added = true;
-            console.log($rootScope.notifications[id].added);
-        }
+        $rootScope.notifications[id].added = ($rootScope.notifications[id].added) ? false : true;
     };
 
     /*
@@ -39,4 +26,5 @@ angular.module('deedoo').controller('notificationController', function ($rootSco
     $scope.backTask = function () {
       $state.go('newTask');
     };
+
 });

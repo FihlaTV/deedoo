@@ -1,41 +1,33 @@
-.newTask{
-  h1{
+.newTask, .notification {
+  h1 {
     font-size: 1.7em;
     margin-top: 10%;
     margin-bottom: 10%;
   }
 }
-.newTaskForm{
-  width: 100%;
-  height: 100%;
-}
-.notification{
-  h1{
-    font-size: 1.7em;
-    margin-top: 10%;
-    margin-bottom: 10%;
-  }
-  .checkbox input:before, .checkbox .checkbox-icon:before{
+
+.notification {
+  .checkbox input:before, .checkbox .checkbox-icon:before {
     border-color: #979797;
   }
-  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before{
+  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
     background-color: #78C182;
     border: none;
   }
-  .item-checkbox p{
+  .item-checkbox p {
     margin-top: 5px;
   }
-  .btn-gray{
+  .btn-gray {
     margin-bottom: 2%;
   }
-  .littleInformation{
+  .littleInformation {
     font-size: 0.8em;
     color: #979797;
     margin-top: -1em;
     margin-bottom: 4%;
     text-align: center;
   }
-  .item-checkbox{
+  .item-checkbox {
     padding-top: 10px;
     padding-bottom: 10px;
   }

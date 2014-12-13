@@ -10,7 +10,10 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
      * List of babysitters on Firebase
      */
     $scope.babysitters = [];
+    $scope.parent = config.user;
+    console.log($scope.parent);
     if(!$rootScope.firstPassage){
+        $rootScope.newTaskForm = {};
         $rootScope.notifications = [
             {
                 "added"    : false,
@@ -63,6 +66,18 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
      * Create New Task and seed Notification to the babysitter
      */
     $scope.createTask = function () {
+
+        /*
+         * Verifications
+         */
+        if($rootScope.notificationsCount == 0){ // Must have One notification
+            console.log('Must have one or more notification');
+        }
+        else{
+            console.log($rootScope.newTaskForm);
+            console.log($rootScope.notifications);
+        }
+
         console.log('Do Stuff...');
     };
 

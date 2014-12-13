@@ -2,11 +2,11 @@
 
     <!-- Header -->
     <ion-header-bar class="top_bar">
+        <a ui-sref="profil" class="button button-icon icon ion-help left"></a>
         <h1 class="title">
-            <a ui-sref="profil" class="button button-icon icon ion-help left"></a>
-            <img src="img/deedoo.png" alt="Logo Deedo" width="30%" height="60%"/>
-            <a ui-sref="profil" class="button button-icon icon ion-person right"></a>
+            <div class="deedoo"></div>
         </h1>
+        <a ui-sref="profil" class="button button-icon icon ion-person right"></a>
     </ion-header-bar>
 
     <!-- CONTENT -->
@@ -19,17 +19,17 @@
                 <!-- Date -->
                 <label class="item item-input">
                     <span class="input-label">Date</span>
-                    <input type="date" ng-model="newTaskForm.date">
+                    <input type="date" ng-model="newTaskForm.date" required="required">
                 </label>
                 <!-- Time Start -->
                 <label class="item item-input">
                     <span class="input-label">Heure de début</span>
-                    <input type="time" ng-model="newTaskForm.timeStart">
+                    <input type="time" ng-model="newTaskForm.timeStart" required="required">
                 </label>
                 <!-- Time End -->
                 <label class="item item-input">
                     <span class="input-label">Heure de fin</span>
-                    <input type="time" ng-model="newTaskForm.timeEnd">
+                    <input type="time" ng-model="newTaskForm.timeEnd" required="required">
                 </label>
                 <br/>
                 <!-- BabySitter -->
@@ -37,7 +37,7 @@
                     <div class="input-label">
                         Baby-Sitter
                     </div>
-                    <select ng-model="newTaskForm.babysitterId">
+                    <select ng-model="newTaskForm.babysitterId" required="required">
                         <option value="null" selected>Aucune</option>
                         <option ng-repeat="babysitter in babysitters" value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
                     </select>
@@ -47,11 +47,8 @@
                     <div class="input-label">
                         Enfant(s)
                     </div>
-                    <select ng-model="newTaskForm.children" multiple>
-                        <option value="1">Mathieu</option>
-                        <option value="1">Emilie</option>
-                        <option value="1">Claire</option>
-                        <option value="1">Laure</option>
+                    <select ng-model="newTaskForm.children" multiple required="required">
+                        <option value="{{$index}}" ng-repeat="child in parent.children">{{child}}</option>
                     </select>
                 </label>
                 <br/>
