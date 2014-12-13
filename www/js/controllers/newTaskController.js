@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('newTaskController', function ($scope, $firebase, config) {
+angular.module('deedoo').controller('newTaskController', function ($rootScope, $scope, $state, $firebase, config) {
 
     var ref     = new Firebase(config.firebaseUrl + 'MEMBERS'),
         sync    = $firebase(ref),
@@ -10,6 +10,7 @@ angular.module('deedoo').controller('newTaskController', function ($scope, $fire
      * List of babysitters on Firebase
      */
     $scope.babysitters = [];
+    $rootScope.NotificationsCount = 0;
 
     members.$loaded().then(function (result) {
         for (var i = 0; i < result.length; i++) {
@@ -24,6 +25,13 @@ angular.module('deedoo').controller('newTaskController', function ($scope, $fire
      */
     $scope.createTask = function () {
         console.log('Do Stuff...');
-    }
+    };
+
+    /*
+     * Redirect to page for manipulate Notifications
+     */
+    $scope.newNotification = function () {
+        $state.go('notifications');
+    };
 
 })

@@ -29,15 +29,20 @@
                     <span class="input-label">Heure de fin</span>
                     <input type="time" ng-model="newTaskForm.timeEnd">
                 </label>
+                <!-- Notifications -->
+                <label class="item item-input" ng-click="newNotification()">
+                    <span class="input-label">Me rassurer :</span>
+                    <p>+ {{NotificationsCount}} notifications</p>
+                </label>
                 <!-- BabySitter -->
                 <label class="item item-input item-select">
-                <div class="input-label">
-                    Baby-Sitter
-                </div>
-                <select ng-model="newTaskForm.babysitterId">
-                    <option value="null" selected>Aucune</option>
-                    <option ng-repeat="babysitter in babysitters" value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
-                </select>
+                    <div class="input-label">
+                        Baby-Sitter
+                    </div>
+                    <select ng-model="newTaskForm.babysitterId">
+                        <option value="null" selected>Aucune</option>
+                        <option ng-repeat="babysitter in babysitters" value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
+                    </select>
                 </label>
             </div>
             <div class="padding">

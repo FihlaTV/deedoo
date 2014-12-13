@@ -1,10 +1,35 @@
-.intro{
-	width: 100%;
-	height: 100%;
-}
-.tutorial_one{
-	width: 100%;
-	height: 100%;
-	background: url('../img/tutorial-one.jpg') no-repeat center;
-	background-size: cover;
+.intro {
+   width: 100%;
+   height: 100%;
+ }
+
+.tutorial {
+  width: 100%;
+  height: 100%;
+  /* Background: */
+  background-image: -o-linear-gradient(-89deg, #78C182 29%, #78B399 100%);
+  background-image: -moz-linear-gradient(-89deg, #78C182 29%, #78B399 100%);
+  background-image: -ms-linear-gradient(-89deg, #78C182 29%, #78B399 100%);
+  background-image: linear-gradient(-179deg, #78C182 29%, #78B399 100%);
+  img{
+    text-align: center;
+    display: block;
+    margin: auto;
+  }
+  h2{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    text-align: center;
+    margin-top: 30%;
+  }
+  p{
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 3em;
+    text-align: center;
+    color: white;
+    margin-top: -5%;
+  }
+  .btn-light{
+    margin-top: 5%;
+  }
 }

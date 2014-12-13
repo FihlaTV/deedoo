@@ -69,6 +69,16 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
+            // Notifications Manipulate (Parent Only)
+            .state('notifications', {
+                url  : '/notifications',
+                views: {
+                    '': {
+                        templateUrl: 'templates/notifications.html'
+                    }
+                }
+            })
+
             // Subscribe Page
             .state('subscribe', {
                 url  : '/subscribe',

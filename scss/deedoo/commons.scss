@@ -2,3 +2,33 @@
  * COLORS
  */
 $google: #F44336 !default;
+$content: #F6F7FA !default;
+
+/*
+ * LOGO
+ */
+.deedoo{
+  width: 100%;
+  height: 16%;
+  display: inline-block;
+  background: url('../img/deedoo.png') no-repeat bottom;
+  background-size: 35% 35%;
+}
+
+.btn-light{
+  width: 60%;
+  display: block;
+  margin: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 2em;
+  color: white;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  border: 1px solid white;
+  border-radius : 10px;
+}
+.content{
+  background-color: $content;
+}
