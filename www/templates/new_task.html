@@ -1,19 +1,21 @@
-<ion-view title="newtask">
+<ion-view title="newtask" ng-controller="newTaskController">
 
     <!-- Header -->
     <ion-header-bar class="top_bar">
-        <a ui-sref="help" class="button button-icon icon ion-help-circled"></a>
-        <h1 class="title">LOGO</h1>
-        <a ui-sref="profil" class="button button-icon icon ion-person"></a>
+        <h1 class="title">
+            <a ui-sref="profil" class="button button-icon icon ion-help left"></a>
+            <img src="img/deedoo.png" alt="Logo Deedo" width="30%" height="60%"/>
+            <a ui-sref="profil" class="button button-icon icon ion-person right"></a>
+        </h1>
     </ion-header-bar>
 
     <!-- CONTENT -->
-    <ion-content class="padding" ng-controller="newTaskController">
+    <ion-content class="content newTask">
 
-        <h1>Ajouter un BabySitting</h1>
+        <h1>Garder mes enfants</h1>
 
         <form ng-submit="createTask()">
-            <div class="list list-inset">
+            <div class="list">
                 <!-- Date -->
                 <label class="item item-input">
                     <span class="input-label">Date</span>
@@ -29,11 +31,7 @@
                     <span class="input-label">Heure de fin</span>
                     <input type="time" ng-model="newTaskForm.timeEnd">
                 </label>
-                <!-- Notifications -->
-                <label class="item item-input" ng-click="newNotification()">
-                    <span class="input-label">Me rassurer :</span>
-                    <p>+ {{NotificationsCount}} notifications</p>
-                </label>
+                <br/>
                 <!-- BabySitter -->
                 <label class="item item-input item-select">
                     <div class="input-label">
@@ -44,10 +42,26 @@
                         <option ng-repeat="babysitter in babysitters" value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
                     </select>
                 </label>
+                <!-- Enfants -->
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Enfant(s)
+                    </div>
+                    <select ng-model="newTaskForm.children" multiple>
+                        <option value="1">Mathieu</option>
+                        <option value="1">Emilie</option>
+                        <option value="1">Claire</option>
+                        <option value="1">Laure</option>
+                    </select>
+                </label>
+                <br/>
+                <!-- Notifications -->
+                <label class="item item-input" ng-click="newNotification()">
+                    <span class="input-label">Notification(s)</span>
+                    <p>{{NotificationsCount}}</p>
+                </label>
             </div>
-            <div class="padding">
-                <input type="submit" class="button button-block button-positive" value="Envoyer la demande">
-            </div>
+            <input type="submit" class="btn btn-green" value="Envoyer la demande">
         </form>
 
     </ion-content>

@@ -81,11 +81,24 @@ $gray: #A2A2A2 !default;
 }
 .title{
   img{
-    display: block;
+    display: inline-block;
     margin: auto;
     margin-top: 10px;
+  }
+  .left {
+    float: left;
+    margin-top: 5px;
+    color: white !important;
+  }
+  .right{
+    float: right;
+    margin-top: 5px;
+    color: white !important;
   }
 }
 .input{
   font-family: 'Source Sans Pro', sans-serif;
+}
+.item-input{
+  padding: 2px 0 5px 16px !important;
 }
