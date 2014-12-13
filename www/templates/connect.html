@@ -1,24 +1,32 @@
 <ion-view title="Connect">
 
+    <!-- Header -->
+    <ion-header-bar class="top_bar">
+        <h1 class="title">
+            <img src="img/deedoo.png" alt="Logo Deedo" width="30%" height="60%"/>
+        </h1>
+    </ion-header-bar>
+
     <!-- CONTENT -->
-    <ion-content class="content" ng-controller="loginController">
+    <ion-content class="content connect" ng-controller="loginController">
 
         <h1>Connexion</h1>
 
         <form ng-submit="connect()">
 
-            <div class="list list-inset">
+            <div class="list">
                 <label class="item item-input">
-                    <input type="email" placeholder="Votre email" ng-model="data.email">
+                    <input type="email" placeholder="E-mail" ng-model="data.email">
                 </label>
                 <label class="item item-input">
                     <input type="password" placeholder="Mot de passe" ng-model="data.password">
                 </label>
             </div>
-
-            <div class="padding">
-                <input type="submit" class="button button-block button-positive" value="Se connecter">
-                <a ui-sref="subscribe" class="button button-block button-balanced">S'inscrire</a>
+            <!-- BTN -->
+            <div>
+                <input type="submit" class="btn btn-green" value="Se connecter">
+                <a ui-sref="subscribe" class="btn btn-gray">S'inscrire</a>
+                <a href="" class="missing_password">Mot de passe oublié ?</a>
             </div>
 
         </form>

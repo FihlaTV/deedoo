@@ -12,7 +12,6 @@ angular.module('deedoo', ['ionic', 'firebase'])
             }
             if (window.StatusBar) {
                 StatusBar.hide();
-                //StatusBar.styleDefault();
             }
         });
     })

@@ -3,11 +3,13 @@
  */
 $google: #F44336 !default;
 $content: #F6F7FA !default;
+$green: #78C182 !default;
+$gray: #A2A2A2 !default;
 
 /*
  * LOGO
  */
-.deedoo{
+.deedoo {
   width: 100%;
   height: 16%;
   display: inline-block;
@@ -15,7 +17,20 @@ $content: #F6F7FA !default;
   background-size: 35% 35%;
 }
 
-.btn-light{
+/*
+ * BTN(s)
+ */
+.btn{
+  width: 95% !important;
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  border: none;
+  border-radius: 5px;
+}
+.btn-light {
   width: 60%;
   display: block;
   margin: auto;
@@ -27,8 +42,44 @@ $content: #F6F7FA !default;
   padding-top: 0.4em;
   padding-bottom: 0.4em;
   border: 1px solid white;
-  border-radius : 10px;
+  border-radius: 10px;
 }
-.content{
+.btn-green {
+  background-color: $green;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 2em;
+}
+.btn-gray {
+  background-color: $gray;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 2em;
+}
+
+.content {
   background-color: $content;
+  h1{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $green;
+    text-align: center;
+  }
+}
+
+.top_bar{
+  background-color: $green;
+}
+.title{
+  img{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+  }
+}
+.input{
+  font-family: 'Source Sans Pro', sans-serif;
 }
