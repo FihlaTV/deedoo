@@ -14,7 +14,14 @@ $gray: #A2A2A2 !default;
     color: white !important;
   }
 }
-
+.logo{
+  width: 100%;
+  height: 200px;
+  display: block;
+  margin: auto;
+  background: url('../img/deedoo.svg') no-repeat center;
+  background-size: 50% 50%;
+}
 .deedoo {
   width: 150px;
   height: 100%;
