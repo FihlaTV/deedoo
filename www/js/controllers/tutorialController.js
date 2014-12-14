@@ -5,7 +5,7 @@ angular.module('deedoo').controller('tutorialController', function ($scope, $sta
     /*
      * If user already have Tutorial -> Redirect to connect
      */
-    if(localStorage.getTutorial()){
+    if (localStorage.getTutorial()) {
         $state.go('connect');
     }
 

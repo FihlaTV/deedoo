@@ -78,4 +78,13 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
 
     };
 
+    /*
+     * Remove Keyboard when change Slide
+     */
+    $scope.hideKeyboard = function () {
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.close();
+        }
+    };
+
 });

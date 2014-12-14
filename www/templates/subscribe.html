@@ -6,7 +6,10 @@
 </ion-header-bar>
 
 <form class="subscribeForm" ng-controller="subscribeController" ng-submit="subscribe()">
-    <ion-slide-box show-pager="true" class="intro">
+    <ion-slide-box
+            show-pager="true"
+            on-slide-changed="hideKeyboard()"
+            class="intro">
         <!-- Select TYPE (parent/babysitter) -->
         <ion-slide>
             <div class="subscribe">
