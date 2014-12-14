@@ -5,7 +5,9 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
     /*
      * Show StatusBar
      */
-    StatusBar.show();
+    if(ionic.Platform.isIOS() || ionic.Platform.isIPad() || ionic.Platform.isAndroid()){
+        StatusBar.show();
+    }
 
     /*
      * Get Informations from Firebase
