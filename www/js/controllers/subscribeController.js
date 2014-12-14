@@ -2,10 +2,13 @@
 
 angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $state, $filter, $firebase, config) {
 
-    var ref         = new Firebase(config.firebaseUrl + 'MEMBERS'),
-        sync        = $firebase(ref),
-        members     = $firebase(ref).$asArray(),
-        children    = [];
+    /*
+     * Get Informations from Firebase
+     */
+    var ref = new Firebase(config.firebaseUrl + 'MEMBERS'),
+        sync = $firebase(ref),
+        members = $firebase(ref).$asArray(),
+        children = [];
 
     $rootScope.subscribeData = {};
     $rootScope.subscribeGood = true;
@@ -48,20 +51,22 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                     }
                 }
 
-                sync.$set(result.length, {
+                var user = {
                     "children" : children,
                     "firstname": subscribeData.firstname,
                     "lastname" : subscribeData.lastname,
                     "mail"     : subscribeData.email,
-                    "password" : $filter('hash')(subscribeData.password+config.sold),
+                    "password" : $filter('hash')(subscribeData.password + config.sold),
                     "phone"    : subscribeData.phone,
                     "type"     : subscribeData.type
-                }).then(function(){
-                    if(subscribeData.type == 'parent'){
+                };
 
+                sync.$set(result.length, user).then(function () {
+                    if (subscribeData.type == 'parent') {
+                        config.user = user;
                         $state.go('newTask');
                     }
-                    else{
+                    else {
                         // TODO Activate the redirection
                         //$state.go('');
                     }

@@ -11,7 +11,8 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
             if (window.StatusBar) {
-                StatusBar.hide();
+                StatusBar.show();
+                //StatusBar.hide();
             }
         });
     })
@@ -20,16 +21,15 @@ angular.module('deedoo', ['ionic', 'firebase'])
      */
     .constant('config', {
         'firebaseUrl'    : 'https://radiant-inferno-550.firebaseio.com/',
-        'intro'          : false,
-        'logged'         : false,
         'user'           : {},
+        'logged'         : false,
         'sold'           : 'y47]htAA9)4yS&V'
     })
 
     /*
      * Route System
      */
-    .config(function ($stateProvider, $urlRouterProvider, config) {
+    .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
         
             // Menu
@@ -97,6 +97,6 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             });
 
-        $urlRouterProvider.otherwise((!config.intro) ? '/tutorial' : '/connect');
-        
+        $urlRouterProvider.otherwise('tutorial');
+
     });

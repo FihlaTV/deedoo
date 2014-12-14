@@ -1,7 +1,10 @@
 'use strict';
 
-angular.module('deedoo').controller('newTaskController', function ($rootScope, $scope, $state, $firebase, config) {
+angular.module('deedoo').controller('newTaskController', function ($rootScope, $scope, $state, $firebase, config, localStorage) {
 
+    /*
+     * Get Informations from Firebase
+     */
     var ref     = new Firebase(config.firebaseUrl + 'MEMBERS'),
         sync    = $firebase(ref),
         members = $firebase(ref).$asArray();
@@ -10,8 +13,12 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
      * List of babysitters on Firebase
      */
     $scope.babysitters = [];
+
+    /*
+     * User Informations
+     */
     $scope.parent = config.user;
-    console.log($scope.parent);
+
     if(!$rootScope.firstPassage){
         $rootScope.newTaskForm = {};
         $rootScope.notifications = [
