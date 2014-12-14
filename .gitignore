@@ -1,7 +1,8 @@
 # IONIC
 platforms/
 www/css/*.css
-www/lib/
+www/lib/*
+!www/lib/sha256.js
 
 # NODE
 node_modules/
