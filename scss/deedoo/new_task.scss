@@ -6,6 +6,11 @@
   }
 }
 
+.toggle.toggle-green input:checked + .track {
+  border-color: #78C182 !important;
+  background-color: #78C182 !important;
+}
+
 .notification {
   .checkbox input:before, .checkbox .checkbox-icon:before {
     border-color: #979797;

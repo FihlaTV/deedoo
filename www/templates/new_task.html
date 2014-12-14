@@ -19,17 +19,17 @@
                 <!-- Date -->
                 <label class="item item-input">
                     <span class="input-label">Date</span>
-                    <input type="date" ng-model="newTaskForm.date" required="required">
+                    <input type="date" ng-model="newTaskForm.date">
                 </label>
                 <!-- Time Start -->
                 <label class="item item-input">
                     <span class="input-label">Heure de début</span>
-                    <input type="time" ng-model="newTaskForm.timeStart" required="required">
+                    <input type="time" ng-model="newTaskForm.timeStart">
                 </label>
                 <!-- Time End -->
                 <label class="item item-input">
                     <span class="input-label">Heure de fin</span>
-                    <input type="time" ng-model="newTaskForm.timeEnd" required="required">
+                    <input type="time" ng-model="newTaskForm.timeEnd">
                 </label>
                 <br/>
                 <!-- BabySitter -->
@@ -37,26 +37,36 @@
                     <div class="input-label">
                         Baby-Sitter
                     </div>
-                    <select ng-model="newTaskForm.babysitterId" required="required">
+                    <select ng-model="newTaskForm.babysitterId">
                         <option value="null" selected>Aucune</option>
-                        <option ng-repeat="babysitter in babysitters" value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
-                    </select>
-                </label>
-                <!-- Enfants -->
-                <label class="item item-input item-select">
-                    <div class="input-label">
-                        Enfant(s)
-                    </div>
-                    <select ng-model="newTaskForm.children" multiple required="required">
-                        <option value="{{$index}}" ng-repeat="child in parent.children">{{child}}</option>
+                        <option ng-repeat="babysitter in babysitters"
+                                value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
                     </select>
                 </label>
                 <br/>
+                <!-- Enfants -->
+                <li class="item item-toggle" ng-repeat="child in children">
+                    {{child.name}}
+                    <label class="toggle toggle-assertive toggle-green">
+                        <input type="checkbox" ng-model="newTaskForm.children[$index]" ng-true-value="true" ng-false-value="false">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <br/>
                 <!-- Notifications -->
-                <label class="item item-input" ng-click="newNotification()">
+                <label class="item item-input" ui-sref="notifications">
                     <span class="input-label">Notification(s)</span>
                     <p>{{notificationsCount}}</p>
                 </label>
+
+                <pre>
+                    <code>
+                        {{notifications}}
+                    </code>
+                </pre>
+
             </div>
             <input type="submit" class="btn btn-green" value="Envoyer la demande">
         </form>
