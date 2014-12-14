@@ -11,7 +11,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
             if (window.StatusBar) {
-                StatusBar.hide();
+                StatusBar.show();
             }
         });
     })

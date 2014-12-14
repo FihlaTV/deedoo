@@ -3,13 +3,6 @@
 angular.module('deedoo').controller('loginController', function ($scope, $state, $filter, $firebase, config, localStorage) {
 
     /*
-     * Show StatusBar
-     */
-    if(ionic.Platform.isIOS() || ionic.Platform.isIPad() || ionic.Platform.isAndroid()){
-        StatusBar.show();
-    }
-
-    /*
      * Get Informations from Firebase
      */
     var ref     = new Firebase(config.firebaseUrl+'MEMBERS'),

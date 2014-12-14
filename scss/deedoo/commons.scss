@@ -13,6 +13,9 @@ $gray: #A2A2A2 !default;
   a {
     color: white !important;
   }
+  a::before{
+    font-size: 1.5em !important;
+  }
 }
 .logo{
   width: 100%;

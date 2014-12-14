@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('tutorialController', function ($scope, $state, localStorage) {
+angular.module('deedoo').controller('tutorialController', function ($scope, $state, localStorage, $window) {
 
     /*
      * If user already have Tutorial -> Redirect to connect

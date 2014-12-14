@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $state, $filter, $firebase, config) {
+angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $state, $filter, $firebase, config, camera) {
 
     /*
      * Get Informations from Firebase
@@ -58,7 +58,8 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                     "mail"     : subscribeData.email,
                     "password" : $filter('hash')(subscribeData.password + config.sold),
                     "phone"    : subscribeData.phone,
-                    "type"     : subscribeData.type
+                    "type"     : subscribeData.type,
+                    "picture"  : subscribeData.picture
                 };
 
                 sync.$set(result.length, user).then(function () {
@@ -85,6 +86,22 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
         if (window.cordova && window.cordova.plugins.Keyboard) {
             cordova.plugins.Keyboard.close();
         }
+    };
+
+    /*
+     * Get picture on the mobile
+     */
+    $scope.getPicture = function () {
+        camera.getPicture().then(function(imageURI) {
+            $rootScope.subscribeData.picture = imageURI;
+        }, function(err) {
+            console.err(err);
+        }, {
+            quality: 75,
+            targetWidth: 320,
+            targetHeight: 320,
+            saveToPhotoAlbum: false
+        });
     };
 
 });
