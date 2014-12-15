@@ -1,0 +1,43 @@
+.working{
+  background-color: $content;
+  .checkbox input:before, .checkbox .checkbox-icon:before {
+    border-color: #979797;
+  }
+  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+    background-color: #78C182;
+    border: none;
+  }
+  .no_guards{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: #929292;
+    line-height: 8px;
+    text-align: center;
+    margin-top: 70%;
+  }
+  h2{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    padding-left: 1.5em;
+    padding-top: 1em;
+    span{
+      margin-right: 1%;
+    }
+  }
+  .informations{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.7em;
+    color: #929292;
+  }
+  .mathieulebg{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8em;
+    color: #929292;
+    font-style: italic;
+    text-align: center;
+    margin-top: 3%;
+  }
+  .checkbox{
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+}

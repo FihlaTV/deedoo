@@ -2,11 +2,19 @@
 
     <!-- Header -->
     <ion-header-bar class="top_bar">
-        <h1 class="title">GUARDS</h1>
+        <a ui-sref="help" class="button button-icon right">Aide</a>
+        <h1 class="title">
+            <div class="deedoo"></div>
+        </h1>
+        <a ui-sref="profil" class="button button-icon icon ion-person right"></a>
     </ion-header-bar>
 
-    <ion-content class="padding green">
-        <h1>Test Page with Menu</h1>
+    <ion-content class="padding green" ng-controller="guardsController">
+        <ul ng-repeat="guard in guards track by $index">
+            <li>
+                <a ng-click="confirmGuard(guard.id_room)">Click pour confirmer</a>
+            </li>
+        </ul>
     </ion-content>
 
 </ion-view>

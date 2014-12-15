@@ -2,11 +2,68 @@
 
     <!-- Header -->
     <ion-header-bar class="top_bar">
-        <h1 class="title">WORKING</h1>
+        <a ui-sref="help" class="button button-icon right">Aide</a>
+        <h1 class="title">
+            <div class="deedoo"></div>
+        </h1>
+        <a ui-sref="profil" class="button button-icon icon ion-person right"></a>
     </ion-header-bar>
 
-    <ion-content class="padding green">
-        <h1>Test Page with Menu</h1>
+    <ion-content class="working" ng-controller="workingController">
+        <div ng-show="!working" class="no_guards">
+            <p>Vous n’avez aucune garde en cours.</p>
+            <p>Réceptionnez les demandes dans « Mes gardes »,</p>
+            <p>les recommandations s’afficheront ici le moment venu.</p>
+        </div>
+        <div ng-show="working" class="guards">
+            <h2>
+                <span class="icon ion-ios-clock-outline"></span>
+                En ce moment
+            </h2>
+            <!-- En ce moment -->
+            <div class="list">
+                <label class="item">
+                    <span class="informations">Vous gardez le(s) enfant(s) jusqu'à {{room[7].$value}}.</span>
+                </label>
+            </div>
+
+            <h2>
+                <span class="icon ion-ios-list-outline"></span>
+                Reste à faire
+            </h2>
+
+            <ul class="list">
+
+                <li class="item item-checkbox" ng-repeat="task in tasks" ng-if="task.status == 0">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-click="confirmTask(task.$id, 0)" ng-checked="notification.added">
+                    </label>
+                    {{task.message}}
+                    <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
+                    <p ng-if="task.time_beginning == null">Aucune heure définie</p>
+                </li>
+                <p class="mathieulebg">Cochez les recommandations effectuées ci-dessus pour rassurer {{room[1].$value}}.</p>
+            </ul>
+
+
+            <h2>
+                <span class="icon ion-ios-checkmark-empty"></span>
+                Déjà fait
+            </h2>
+
+            <ul class="list">
+
+                <li class="item item-checkbox" ng-repeat="task in tasks" ng-if="task.status == 1">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-click="confirmTask(task.$id, 1)" ng-checked="true">
+                    </label>
+                    {{task.message}}
+                    <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
+                    <p ng-if="task.time_beginning == null">Aucune heure définie</p>
+                </li>
+            </ul>
+
+        </div>
     </ion-content>
 
 </ion-view>

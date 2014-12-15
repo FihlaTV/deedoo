@@ -68,8 +68,7 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                         $state.go('newTask');
                     }
                     else {
-                        // TODO Activate the redirection
-                        //$state.go('');
+                        $state.go('tab.guards');
                     }
                 });
 

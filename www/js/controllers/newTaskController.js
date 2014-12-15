@@ -111,6 +111,8 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
             var room = {
                 'id_babysitter' : $rootScope.newTaskForm.babysitterId,
                 'id_parent'     : config.user.$id,
+                'lastname_parent': config.user.lastname,
+                'firstname_parent': config.user.firstname,
                 'status'        : false,
                 'time_beginning': $rootScope.newTaskForm.date+'-'+$rootScope.newTaskForm.timeStart,
                 'time_ending'   : $rootScope.newTaskForm.date+'-'+$rootScope.newTaskForm.timeEnd,
@@ -130,7 +132,17 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
             // Add to firebase
             rooms.$loaded().then(function (result) {
                 roomId = result.length;
-                syncRoom.$set(roomId, room);
+                syncRoom.$set(roomId, room).then(function(){
+                    $scope.good = true;
+
+                    var refRoom = new Firebase(config.firebaseUrl + 'ROOM/'+roomId);
+
+                    refRoom.orderByChild('status').on('child_changed', function(){
+                        console.log('Room Changed');
+                    });
+
+                });
+
             }).then(function(){
 
                 // Add one per one notifications in firebase
@@ -165,9 +177,6 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
 
                     }
                 }
-
-                $scope.good = true;
-                // TODO Listen RoomId Status
 
             });
 

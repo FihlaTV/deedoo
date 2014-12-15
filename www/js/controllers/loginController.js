@@ -20,7 +20,7 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
                 if (members[i].mail == $scope.data.email && members[i].password == $filter('hash')($scope.data.password+config.sold)) {
                     config.user = members[i];
                     config.logged = true;
-                    $state.go((members[i].type == 'parent') ? 'newTask': '');
+                    $state.go((members[i].type == 'parent') ? 'newTask': 'tab.guards');
                 }
 
             }
