@@ -97,11 +97,32 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
-            .state('tab.test', {
-                url: '/test',
+            // Working (Babysitter)
+            .state('tab.working', {
+                url: '/working',
                 views: {
-                    'tab-test@tab': {
-                        templateUrl: 'templates/tab-test.html'
+                    'tab-working@tab': {
+                        templateUrl: 'templates/tab-working.html'
+                    }
+                }
+            })
+
+            // DODO (Babysitter)
+            .state('tab.dodo', {
+                url: '/dodo',
+                views: {
+                    'tab-dodo@tab': {
+                        templateUrl: 'templates/tab-dodo.html'
+                    }
+                }
+            })
+
+            // GUARDS (Babysitter)
+            .state('tab.guards', {
+                url: '/guards',
+                views: {
+                    'tab-guards@tab': {
+                        templateUrl: 'templates/tab-guards.html'
                     }
                 }
             });
