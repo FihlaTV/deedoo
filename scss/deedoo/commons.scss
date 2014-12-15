@@ -16,6 +16,11 @@ $gray: #A2A2A2 !default;
   a::before{
     font-size: 1.5em !important;
   }
+  .title{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: white !important;
+  }
 }
 .logo{
   width: 100%;

@@ -97,9 +97,9 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
         }, function(err) {
             console.err(err);
         }, {
-            quality: 75,
-            targetWidth: 320,
-            targetHeight: 320,
+            quality: 100,
+            targetWidth: 200,
+            targetHeight: 200,
             saveToPhotoAlbum: false
         });
     };

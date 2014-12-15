@@ -1,0 +1,58 @@
+<ion-view title="newtask">
+
+    <!-- Header -->
+    <ion-header-bar class="top_bar">
+        <a ui-sref="notifications" class="button button-icon icon ion-chevron-left left"></a>
+        <h1 class="title">Recommandation</h1>
+    </ion-header-bar>
+
+    <!-- CONTENT -->
+    <ion-content class="content newNotification">
+
+        <h1>Nouvelle recommandation</h1>
+
+        <form ng-controller="newNotificationController" ng-submit="createNewNotification()">
+
+            <div class="list">
+                <!-- Title -->
+                <label class="item item-input">
+                    <span class="input-label">Libellé de la recommandation</span>
+                    <input type="text" ng-model="newNotificationData.title">
+                </label>
+                <!-- Time Start -->
+                <label class="item item-input">
+                    <span class="input-label">Heure de début</span>
+                    <input type="time" ng-model="newNotificationData.timeStart">
+                </label>
+                <!-- Time End -->
+                <label class="item item-input">
+                    <span class="input-label">Heure de fin (optionnel)</span>
+                    <input type="time" ng-model="newNotificationData.timeEnd">
+                </label>
+                <br/>
+                <!-- Enfants -->
+                <li class="item item-toggle" ng-repeat="child in children">
+                    {{child.name}}
+                    <label class="toggle toggle-assertive toggle-green">
+                        <input type="checkbox" ng-model="newNotificationData.children[$index]" ng-true-value="true" ng-false-value="false">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+                <br/>
+                <label class="item item-input">
+                    <textarea rows="6" ng-model="newNotificationData.other">Informations complémentaires</textarea>
+                </label>
+            </div>
+
+            <!-- BTN -->
+            <div>
+                <input type="submit" class="btn btn-green" value="OK">
+            </div>
+
+        </form>
+
+    </ion-content>
+
+</ion-view>

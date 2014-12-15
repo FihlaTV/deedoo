@@ -77,6 +77,16 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
+            // Add Custom Notification (Parent Only)
+            .state('newNotification', {
+                url  : '/newnotification',
+                views: {
+                    '': {
+                        templateUrl: 'templates/new_notification.html'
+                    }
+                }
+            })
+
             // Subscribe Page
             .state('subscribe', {
                 url  : '/subscribe',

@@ -61,8 +61,13 @@
                 </label>
 
             </div>
-            <input type="submit" class="btn btn-green" value="Envoyer la demande">
+            <input ng-if="!good" type="submit" class="btn btn-green" value="Envoyer la demande">
         </form>
+
+        <div ng-if="good">
+            <p class="btn btn-gray">Demande envoyée</p>
+            <p>Vous serez notifié(e) lorsque votre demande sera acceptée.</p>
+        </div>
 
     </ion-content>
 

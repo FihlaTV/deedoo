@@ -28,6 +28,7 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
      * User Informations
      */
     $scope.parent   = config.user;
+    $scope.good     = false;
 
     if (!$rootScope.firstPassage) {
         $rootScope.babysitters = [];
@@ -150,8 +151,12 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                         else{
                             task['children'] = [];
                             for(var j in $rootScope.notifications[i].children){
-                                tasks['children'].push($rootScope.notifications[i].children[j]);
+                                task['children'].push($rootScope.notifications[i].children[j]);
                             }
+                        }
+                        // Other
+                        if($rootScope.notifications[i].other != null) {
+                            task['other'].push($rootScope.notifications[i].other);
                         }
 
                         tasks.$loaded(function (resultTasks) {
@@ -161,6 +166,7 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                     }
                 }
 
+                $scope.good = true;
                 // TODO Listen RoomId Status
 
             });
