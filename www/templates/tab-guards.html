@@ -9,12 +9,51 @@
         <a ui-sref="profil" class="button button-icon icon ion-person right"></a>
     </ion-header-bar>
 
-    <ion-content class="padding green" ng-controller="guardsController">
-        <ul ng-repeat="guard in guards track by $index">
-            <li>
-                <a ng-click="confirmGuard(guard.id_room)">Click pour confirmer</a>
-            </li>
-        </ul>
+    <ion-content class="guards" ng-controller="guardsController">
+        <h2>
+            <span class="icon ion-ios-filing-outline"></span>
+            Invitations reçues
+        </h2>
+        <div class="list">
+            <label class="item"
+                   ng-repeat="guard in guards track by $index"
+                   ng-if="guard.status == false"
+                   ng-click="confirmGuard(guard.id_room)">
+                <div class="left">
+                    <p class="time">{{guard.date | date:'d MMMM y'}}</p>
+                    <p>
+                        <span class="icon ion-ios-clock-outline"></span>
+                        <span class="moreInformation">{{guard.time_beginning+'-'+guard.time_ending}}</span>
+                        <span class="icon ion-ios-email-outline"></span>
+                        <span class="moreInformation">{{ guard.parent_firstname+' '+guard.parent_lastname}}</span>
+                    </p>
+                </div>
+                <div class="icon ion-ios-arrow-right"></div>
+            </label>
+        </div>
+
+        <h2>
+            <span class="icon ion-ios-checkmark-empty"></span>
+            Invitations acceptées
+        </h2>
+        <div class="list">
+            <label class="item"
+                   ng-repeat="guard in guards track by $index"
+                   ng-if="guard.status == true"
+                   ng-click="confirmGuard(guard.id_room)">
+                <div class="left">
+                    <p class="time">{{guard.date | date:'d MMMM y'}}</p>
+                    <p>
+                        <span class="icon ion-ios-clock-outline"></span>
+                        <span class="moreInformation">{{guard.time_beginning+'-'+guard.time_ending}}</span>
+                        <span class="icon ion-ios-email-outline"></span>
+                        <span class="moreInformation">{{ guard.parent_firstname+' '+guard.parent_lastname}}</span>
+                    </p>
+                </div>
+                <div class="icon ion-ios-arrow-right"></div>
+            </label>
+        </div>
+
     </ion-content>
 
 </ion-view>

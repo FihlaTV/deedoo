@@ -41,3 +41,39 @@
     font-family: 'Source Sans Pro', sans-serif;
   }
 }
+.guards{
+  background-color: $content;
+  h2{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
+    padding-left: 1.5em;
+    padding-top: 1em;
+    span{
+      margin-right: 1%;
+    }
+  }
+  .item{
+    padding-left: 1.5em;
+  }
+  .time{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2em;
+    color: #2E2E2E;
+  }
+  .list .icon{
+    margin-right: 0.5em;
+  }
+  .list{
+    .left{
+      float: left;
+    }
+    .moreInformation{
+      margin-right: 0.5em;
+    }
+    .ion-ios-arrow-right{
+      font-size: 2em;
+      float: right;
+      margin-top: 1.5%;
+    }
+  }
+}

@@ -109,14 +109,15 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
         else {
 
             var room = {
-                'id_babysitter' : $rootScope.newTaskForm.babysitterId,
-                'id_parent'     : config.user.$id,
-                'lastname_parent': config.user.lastname,
-                'firstname_parent': config.user.firstname,
-                'status'        : false,
-                'time_beginning': $rootScope.newTaskForm.date+'-'+$rootScope.newTaskForm.timeStart,
-                'time_ending'   : $rootScope.newTaskForm.date+'-'+$rootScope.newTaskForm.timeEnd,
-                'children'      : []
+                'id_babysitter'     : $rootScope.newTaskForm.babysitterId,
+                'id_parent'         : config.user.$id,
+                'lastname_parent'   : config.user.lastname,
+                'firstname_parent'  : config.user.firstname,
+                'status'            : false,
+                'date'              : new Date($rootScope.newTaskForm.date).getTime(),
+                'time_beginning'    : $rootScope.newTaskForm.timeStart,
+                'time_ending'       : $rootScope.newTaskForm.timeEnd,
+                'children'          : []
             };
 
             // Add children
@@ -153,8 +154,8 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                             'id_room'       : roomId,
                             'message'       : $rootScope.notifications[i].title,
                             'status'        : 0,
-                            'time_beginning': ($rootScope.notifications[i].timeStart != "") ? $rootScope.notifications[i].timeStart : null,
-                            'time_ending'   : ($rootScope.notifications[i].timeEnd != "") ? $rootScope.notifications[i].timeEnd : null
+                            'time_beginning': ($rootScope.notifications[i].timeStart != "") ? $rootScope.notifications[i].timeStart : "",
+                            'time_ending'   : ($rootScope.notifications[i].timeEnd != "") ? $rootScope.notifications[i].timeEnd : ""
                         };
 
                         if($rootScope.notifications[i].children == null){

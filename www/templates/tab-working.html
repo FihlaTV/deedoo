@@ -15,7 +15,7 @@
             <p>Réceptionnez les demandes dans « Mes gardes »,</p>
             <p>les recommandations s’afficheront ici le moment venu.</p>
         </div>
-        <div ng-show="working" class="guards">
+        <div ng-show="working">
             <h2>
                 <span class="icon ion-ios-clock-outline"></span>
                 En ce moment
@@ -42,7 +42,6 @@
                     <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
                     <p ng-if="task.time_beginning == null">Aucune heure définie</p>
                 </li>
-                <p class="mathieulebg">Cochez les recommandations effectuées ci-dessus pour rassurer {{room[1].$value}}.</p>
             </ul>
 
 

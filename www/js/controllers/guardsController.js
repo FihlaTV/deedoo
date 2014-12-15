@@ -17,20 +17,23 @@ angular.module('deedoo').controller('guardsController', function ($rootScope, $s
             if (rooms[i].id_babysitter == $scope.babysitter.$id) {
 
                 $rootScope.guards.push({
-                    'id_room'         : rooms[i].$id,
-                    'id_parent'       : rooms[i].id_parent,
-                    'status'          : rooms[i].status,
-                    'time_beginning'  : rooms[i].time_beginning,
-                    'time_ending'     : rooms[i].time_ending,
-                    'children'        : rooms[i].children,
-                    'parent_lastname' : rooms[i].lastname_parent,
-                    'parent_firstname': rooms[i].firstname_parent
+                    'id_room'           : rooms[i].$id,
+                    'id_parent'         : rooms[i].id_parent,
+                    'status'            : rooms[i].status,
+                    'date'              : rooms[i].date,
+                    'time_beginning'    : rooms[i].time_beginning,
+                    'time_ending'       : rooms[i].time_ending,
+                    'children'          : rooms[i].children,
+                    'parent_lastname'   : rooms[i].lastname_parent,
+                    'parent_firstname'  : rooms[i].firstname_parent
                 });
 
+                console.log($rootScope.guards);
             }
 
         }
     });
+
 
     $scope.confirmGuard = function (idRoom) {
         var refRoom     = new Firebase(config.firebaseUrl + 'ROOM/' + idRoom);
