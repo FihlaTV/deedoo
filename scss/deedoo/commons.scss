@@ -85,6 +85,28 @@ $gray: #A2A2A2 !default;
   text-align: center;
   line-height: 2em;
 }
+.btn-little-green{
+  width: 30% !important;
+  display: inline-block;
+  background-color: $green;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 2em;
+  margin: auto 1em;
+}
+.btn-little-red{
+  width: 30% !important;
+  display: inline-block;
+  background-color: #E5695C;
+  color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 2em;
+  margin: auto 1em;
+}
 
 /*
  * CONTENT

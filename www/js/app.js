@@ -47,6 +47,16 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
+            // Profil
+            .state('profil', {
+                url  : '/profil',
+                views: {
+                    '': {
+                        templateUrl: 'templates/profil.html'
+                    }
+                }
+            })
+
             // Connect Page
             .state('connect', {
                 url  : '/connect',
@@ -123,6 +133,16 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 views: {
                     'tab-guards@tab': {
                         templateUrl: 'templates/tab-guards.html'
+                    }
+                }
+            })
+
+            // Information Guard
+            .state('informationGuard', {
+                url  : '/informationguard/:idGuard',
+                views: {
+                    '': {
+                        templateUrl: 'templates/informations_guard.html'
                     }
                 }
             });

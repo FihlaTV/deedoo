@@ -77,3 +77,19 @@
     }
   }
 }
+.informationGuard{
+  .list{
+    display: block;
+    margin-top: 2em;
+    .informations{
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 1em;
+      color: #929292;
+    }
+  }
+  .btnContainer{
+    text-align: center;
+    display: block;
+    margin-top: 5em;
+  }
+}

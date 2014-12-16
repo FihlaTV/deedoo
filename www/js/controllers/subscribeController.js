@@ -59,7 +59,7 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
                     "password" : $filter('hash')(subscribeData.password + config.sold),
                     "phone"    : subscribeData.phone,
                     "type"     : subscribeData.type,
-                    "picture"  : subscribeData.picture
+                    "picture"  : (subscribeData.picture != null) ? subscribeData.picture : ""
                 };
 
                 sync.$set(result.length, user).then(function () {
