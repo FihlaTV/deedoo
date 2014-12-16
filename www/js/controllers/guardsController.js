@@ -28,7 +28,6 @@ angular.module('deedoo').controller('guardsController', function ($rootScope, $s
                     'parent_firstname'  : rooms[i].firstname_parent
                 });
 
-                console.log($rootScope.guards);
             }
 
         }

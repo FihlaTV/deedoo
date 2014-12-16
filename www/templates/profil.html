@@ -1,12 +1,11 @@
 <ion-view title="Connect">
 
     <!-- Header -->
-    <ion-header-bar class="top_bar">
-        <a ui-sref="" class="button button-icon icon ion-chevron-left left"></a>
+    <ion-header-bar class="top_bar" ng-controller="profileController">
+        <a ng-click="back()" class="button button-icon icon ion-chevron-left left"></a>
         <h1 class="title">
             Mon Compte
         </h1>
-        <a ui-sref="modify" class="button button-icon right">Modifier</a>
     </ion-header-bar>
 
     <!-- CONTENT -->

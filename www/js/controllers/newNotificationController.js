@@ -2,6 +2,14 @@
 
 angular.module('deedoo').controller('newNotificationController', function ($rootScope, $scope, $state, config) {
 
+    /*
+     * Must be connect
+     */
+    if(!config.logged){
+        $state.go('connect');
+        return;
+    }
+
     $scope.parent = config.user;
     $scope.children = {};
 

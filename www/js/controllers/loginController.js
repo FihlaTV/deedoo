@@ -13,7 +13,11 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
      */
     $scope.connect = function () {
 
+        /*
+         * check if we have Values of Email & Password
+         */
         if($scope.data.email != null && $scope.data.password != null){
+
             members.$loaded().then(function (result) {
 
                 for (var i = 0; i < result.length; i++) {
@@ -27,6 +31,7 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
                 }
 
             });
+
         }
 
     };

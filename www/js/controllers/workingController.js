@@ -3,6 +3,14 @@
 angular.module('deedoo').controller('workingController', function ($scope, $stateParams, $firebase, config) {
 
     /*
+     * Must be connect
+     */
+    if(!config.logged){
+        $state.go('connect');
+        return;
+    }
+
+    /*
      * Firebase
      */
     var ref         = new Firebase(config.firebaseUrl + 'ROOM/' + $stateParams.idRoom),
