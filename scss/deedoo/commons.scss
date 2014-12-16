@@ -177,6 +177,7 @@ $inputShift : 16px;
 }
 
 .list {
+  overflow: hidden;
   .item + .item {
     border-top: none;
   }
@@ -188,5 +189,11 @@ $inputShift : 16px;
     top: 0;
     border-bottom: 1px solid #ddd;
   }
-  overflow: hidden;
+  .item-content,
+  .item-radio input:checked ~ .item-content{
+    background: transparent;
+  }
+  .radio-icon {
+    color: $green;
+  }
 }
