@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('notificationController', function ($rootScope, $scope, $state) {
+angular.module('deedoo').controller('notificationController', function ($rootScope, $scope, $state, config) {
 
     /*
      * Must be connect

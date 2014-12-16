@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('workingController', function ($scope, $stateParams, $firebase, config) {
+angular.module('deedoo').controller('workingController', function ($scope, $stateParams, $firebase, $state, config) {
 
     /*
      * Must be connect
