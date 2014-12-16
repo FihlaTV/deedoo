@@ -5,7 +5,7 @@ angular.module('deedoo').controller('notificationController', function ($rootSco
     /*
      * Must be connect
      */
-    if(!config.logged){
+    if (!config.logged) {
         $state.go('connect');
         return;
     }
@@ -13,11 +13,11 @@ angular.module('deedoo').controller('notificationController', function ($rootSco
     /*
      * Can't go to this page if notifications are no defined
      */
-    if(!angular.isDefined($rootScope.notifications)){
+    if (!angular.isDefined($rootScope.notifications)) {
         $state.go('newTask');
         return;
     }
-    else{
+    else {
         $rootScope.firstPassage = true;
     }
 
@@ -32,7 +32,7 @@ angular.module('deedoo').controller('notificationController', function ($rootSco
      * Back to createTask
      */
     $scope.backTask = function () {
-      $state.go('newTask');
+        $state.go('newTask');
     };
 
 });

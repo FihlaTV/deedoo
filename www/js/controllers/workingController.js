@@ -5,7 +5,7 @@ angular.module('deedoo').controller('workingController', function ($scope, $stat
     /*
      * Must be connect
      */
-    if(!config.logged){
+    if (!config.logged) {
         $state.go('connect');
         return;
     }
@@ -31,9 +31,9 @@ angular.module('deedoo').controller('workingController', function ($scope, $stat
     });
 
     // Tasks for Room
-    tasks.$loaded().then(function(result){
-        for (var i = 0 ; i< result.length; i++){
-            if(tasks[i].id_room == $scope.idRoom){
+    tasks.$loaded().then(function (result) {
+        for (var i = 0; i < result.length; i++) {
+            if (tasks[i].id_room == $scope.idRoom) {
                 $scope.tasks.push(tasks[i]);
             }
         }

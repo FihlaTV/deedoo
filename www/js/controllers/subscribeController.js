@@ -5,10 +5,10 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
     /*
      * Get Informations from Firebase
      */
-    var ref = new Firebase(config.firebaseUrl + 'MEMBERS'),
-        sync = $firebase(ref),
-        members = $firebase(ref).$asArray(),
-        children = [];
+    var ref         = new Firebase(config.firebaseUrl + 'MEMBERS'),
+        sync        = $firebase(ref),
+        members     = $firebase(ref).$asArray(),
+        children    = [];
 
     $rootScope.subscribeData = {};
     $rootScope.subscribeGood = true;
@@ -98,14 +98,14 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
      * Get picture on the mobile
      */
     $scope.getPicture = function () {
-        camera.getPicture().then(function(imageURI) {
+        camera.getPicture().then(function (imageURI) {
             $rootScope.subscribeData.picture = imageURI;
-        }, function(err) {
+        }, function (err) {
             console.err(err);
         }, {
-            quality: 100,
-            targetWidth: 200,
-            targetHeight: 200,
+            quality         : 100,
+            targetWidth     : 200,
+            targetHeight    : 200,
             saveToPhotoAlbum: false
         });
     };

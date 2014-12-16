@@ -2,13 +2,13 @@
 
 angular.module('deedoo').factory('camera', function ($q) {
 
-    return{
-        getPicture: function(options) {
+    return {
+        getPicture: function (options) {
             var deffered = $q.defer();
 
-            navigator.camera.getPicture(function(result) {
+            navigator.camera.getPicture(function (result) {
                 deffered.resolve(result);
-            }, function(err) {
+            }, function (err) {
                 deffered.reject(err);
             }, options);
 

@@ -5,7 +5,7 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
     /*
      * If user is no connected -> Redirect to connect
      */
-    if(!config.logged){
+    if (!config.logged) {
         $state.go('connect');
         return;
     }
@@ -30,10 +30,10 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
     $scope.good     = false;
 
     if (!$rootScope.firstPassage) {
-        $rootScope.babysitters = [];
-        $rootScope.children = {};
-        $rootScope.newTaskForm = {};
-        $rootScope.notifications = [
+        $rootScope.babysitters      = [];
+        $rootScope.children         = {};
+        $rootScope.newTaskForm      = {};
+        $rootScope.notifications    = [
             {
                 "added"    : false,
                 "title"    : "A fait prout",
@@ -108,22 +108,22 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
         else {
 
             var room = {
-                'id_babysitter'     : $rootScope.newTaskForm.babysitterId,
-                'id_parent'         : config.user.$id,
-                'lastname_parent'   : config.user.lastname,
-                'firstname_parent'  : config.user.firstname,
-                'status'            : false,
-                'date'              : new Date($rootScope.newTaskForm.date).getTime(),
-                'time_beginning'    : $rootScope.newTaskForm.timeStart,
-                'time_ending'       : $rootScope.newTaskForm.timeEnd,
-                'children'          : []
+                'id_babysitter'   : $rootScope.newTaskForm.babysitterId,
+                'id_parent'       : config.user.$id,
+                'lastname_parent' : config.user.lastname,
+                'firstname_parent': config.user.firstname,
+                'status'          : false,
+                'date'            : new Date($rootScope.newTaskForm.date).getTime(),
+                'time_beginning'  : $rootScope.newTaskForm.timeStart,
+                'time_ending'     : $rootScope.newTaskForm.timeEnd,
+                'children'        : []
             };
 
             // Add children
-            for(var i in $rootScope.children){
-                if($rootScope.newTaskForm.children[i]){
+            for (var i in $rootScope.children) {
+                if ($rootScope.newTaskForm.children[i]) {
                     room.children[i] = {
-                        'name': $rootScope.children[i].name,
+                        'name'    : $rootScope.children[i].name,
                         'sleeping': false
                     }
                 }
@@ -132,29 +132,28 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
             // Add to firebase
             rooms.$loaded().then(function (result) {
                 roomId = result.length;
-                syncRoom.$set(roomId, room).then(function(){
+                syncRoom.$set(roomId, room).then(function () {
                     $scope.good = true;
 
-                    var refRoom = new Firebase(config.firebaseUrl + 'ROOM/'+roomId);
+                    var refRoom = new Firebase(config.firebaseUrl + 'ROOM/' + roomId);
 
-                    refRoom.orderByChild('status').on('child_changed', function()
-                    {
+                    refRoom.orderByChild('status').on('child_changed', function () {
                         console.log('Room Changed');
-                        $state.go('boardParent', { idRoom: roomId });
+                        $state.go('boardParent', {idRoom: roomId});
                     });
 
                 });
 
-            }).then(function(){
+            }).then(function () {
 
-                var length = $rootScope.notifications.length -1;
+                var length = $rootScope.notifications.length - 1;
 
                 function addTask(i) {
-                    if(i < 0){
-                        console.log('Done');
+                    if (i < 0) {
+                        return 0;
                     }
-                    else{
-                        if($rootScope.notifications[i].added){
+                    else {
+                        if ($rootScope.notifications[i].added) {
 
                             var task = {
                                 'id_room'       : roomId,
@@ -164,30 +163,30 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                                 'time_ending'   : ($rootScope.notifications[i].timeEnd != "") ? $rootScope.notifications[i].timeEnd : ""
                             };
 
-                            if($rootScope.notifications[i].children == null){
+                            if ($rootScope.notifications[i].children == null) {
                                 task['children'] = null;
                             }
-                            else{
+                            else {
                                 task['children'] = [];
-                                for(var j in $rootScope.notifications[i].children){
+                                for (var j in $rootScope.notifications[i].children) {
                                     task['children'].push($rootScope.notifications[i].children[j]);
                                 }
                             }
                             // Other
-                            if($rootScope.notifications[i].other != null) {
+                            if ($rootScope.notifications[i].other != null) {
                                 task['other'].push($rootScope.notifications[i].other);
                             }
 
                             var tasks = $firebase(refTask).$asArray();
                             tasks.$loaded(function (resultTasks) {
-                                syncTask.$set(resultTasks.length, task).then(function(){
-                                    addTask(i-1);
+                                syncTask.$set(resultTasks.length, task).then(function () {
+                                    addTask(i - 1);
                                 });
                             });
 
                         }
-                        else{
-                            addTask(i-1);
+                        else {
+                            addTask(i - 1);
                         }
                     }
 

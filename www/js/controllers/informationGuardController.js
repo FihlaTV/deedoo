@@ -5,7 +5,7 @@ angular.module('deedoo').controller('informationGuardController', function ($roo
     /*
      * Must be connect
      */
-    if(!config.logged){
+    if (!config.logged) {
         $state.go('connect');
         return;
     }
@@ -16,7 +16,7 @@ angular.module('deedoo').controller('informationGuardController', function ($roo
             var refRoom     = new Firebase(config.firebaseUrl + 'ROOM/' + $stateParams.idGuard);
             var syncRoom    = $firebase(refRoom);
 
-            syncRoom.$update({'status': true}).then(function(){
+            syncRoom.$update({'status': true}).then(function () {
                 $state.go('tab.guards');
             });
 

@@ -22,10 +22,11 @@ angular.module('deedoo', ['ionic', 'firebase'])
      * CONFIG
      */
     .constant('config', {
-        'firebaseUrl'    : 'https://radiant-inferno-550.firebaseio.com/',
-        'user'           : {},
-        'logged'         : false,
-        'sold'           : 'y47]htAA9)4yS&V'
+        'firebaseUrl': 'https://radiant-inferno-550.firebaseio.com/',
+        'user'       : {},
+        'logged'     : false,
+        'sold'       : 'y47]htAA9)4yS&V',
+        'dev'        : true
     })
 
     /*
@@ -33,7 +34,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
      */
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-        
+
             // Menu
             .state('tab', {
                 url        : "/tab",
@@ -122,7 +123,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
 
             // Working (Babysitter)
             .state('tab.working', {
-                url: '/working/:idRoom',
+                url  : '/working/:idRoom',
                 views: {
                     'tab-working@tab': {
                         templateUrl: 'templates/tab-working.html'
@@ -132,7 +133,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
 
             // DODO (Babysitter)
             .state('tab.dodo', {
-                url: '/dodo',
+                url  : '/dodo',
                 views: {
                     'tab-dodo@tab': {
                         templateUrl: 'templates/tab-dodo.html'
@@ -142,7 +143,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
 
             // GUARDS (Babysitter)
             .state('tab.guards', {
-                url: '/guards',
+                url  : '/guards',
                 views: {
                     'tab-guards@tab': {
                         templateUrl: 'templates/tab-guards.html'

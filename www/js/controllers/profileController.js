@@ -5,11 +5,11 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
     /*
      * Must be connect
      */
-    if(!config.logged){
+    if (!config.logged) {
         $state.go('connect');
         return;
     }
-    else{
+    else {
         $scope.profilData = {};
     }
 
@@ -22,17 +22,17 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
     /*
      * Informations Users From Firebase
      */
-    syncMember.$loaded().then(function(result){
+    syncMember.$loaded().then(function (result) {
         $scope.profilData = {
-            'firstname' : result.firstname,
-            'lastname'  : result.lastname,
-            'phone'     : result.phone,
-            'email'     : result.mail,
-            'picture'   : (result.picture != null) ? result.picture : "",
-            'type'      : result.type,
-            'password'  : 'Motdepasse'
+            'firstname': result.firstname,
+            'lastname' : result.lastname,
+            'phone'    : result.phone,
+            'email'    : result.mail,
+            'picture'  : (result.picture != null) ? result.picture : "",
+            'type'     : result.type,
+            'password' : 'Motdepasse'
         };
-    }).then(function() {
+    }).then(function () {
 
         var sync = $firebase(ref);
 
@@ -43,11 +43,11 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
 
                 sync.$update({
                     'firstname': $scope.profilData.firstname,
-                    'lastname'  : $scope.profilData.lastname,
+                    'lastname' : $scope.profilData.lastname,
                     'mail'     : $scope.profilData.email,
                     'phone'    : $scope.profilData.phone,
                     'type'     : $scope.profilData.type,
-                    'picture'   : $scope.profilData.picture
+                    'picture'  : $scope.profilData.picture
                 }).then(function () {
                     console.log('Hey');
                 });
@@ -60,21 +60,21 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
      * Buttons Back
      */
     $scope.back = function () {
-        $state.go((config.user.type == 'parent') ? 'newTask': 'tab.guards');
+        $state.go((config.user.type == 'parent') ? 'newTask' : 'tab.guards');
     };
 
     /*
      * Get picture on the mobile
      */
     $scope.getPicture = function () {
-        camera.getPicture().then(function(imageURI) {
+        camera.getPicture().then(function (imageURI) {
             $scope.profilData.picture = imageURI;
-        }, function(err) {
+        }, function (err) {
             console.err(err);
         }, {
-            quality: 100,
-            targetWidth: 200,
-            targetHeight: 200,
+            quality         : 100,
+            targetWidth     : 200,
+            targetHeight    : 200,
             saveToPhotoAlbum: false
         });
     };

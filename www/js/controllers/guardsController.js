@@ -5,7 +5,7 @@ angular.module('deedoo').controller('guardsController', function ($rootScope, $s
     /*
      * Must be connect
      */
-    if(!config.logged){
+    if (!config.logged) {
         $state.go('connect');
         return;
     }
@@ -25,15 +25,15 @@ angular.module('deedoo').controller('guardsController', function ($rootScope, $s
             if (rooms[i].id_babysitter == $scope.babysitter.$id) {
 
                 $rootScope.guards.push({
-                    'id_room'           : rooms[i].$id,
-                    'id_parent'         : rooms[i].id_parent,
-                    'status'            : rooms[i].status,
-                    'date'              : rooms[i].date,
-                    'time_beginning'    : rooms[i].time_beginning,
-                    'time_ending'       : rooms[i].time_ending,
-                    'children'          : rooms[i].children,
-                    'parent_lastname'   : rooms[i].lastname_parent,
-                    'parent_firstname'  : rooms[i].firstname_parent
+                    'id_room'         : rooms[i].$id,
+                    'id_parent'       : rooms[i].id_parent,
+                    'status'          : rooms[i].status,
+                    'date'            : rooms[i].date,
+                    'time_beginning'  : rooms[i].time_beginning,
+                    'time_ending'     : rooms[i].time_ending,
+                    'children'        : rooms[i].children,
+                    'parent_lastname' : rooms[i].lastname_parent,
+                    'parent_firstname': rooms[i].firstname_parent
                 });
 
             }
@@ -42,12 +42,12 @@ angular.module('deedoo').controller('guardsController', function ($rootScope, $s
     });
 
     $scope.confirmGuard = function (idRoom, booleen) {
-        if(booleen){
+        if (booleen) {
             $state.go('tab.working', {idRoom: idRoom});
         }
-        else{
-            var refRoom     = new Firebase(config.firebaseUrl + 'ROOM/' + idRoom);
-            var syncRoom    = $firebase(refRoom);
+        else {
+            var refRoom  = new Firebase(config.firebaseUrl + 'ROOM/' + idRoom);
+            var syncRoom = $firebase(refRoom);
             $state.go('informationGuard', {idGuard: idRoom});
         }
 
