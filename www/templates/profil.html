@@ -10,10 +10,11 @@
 
     <!-- CONTENT -->
     <ion-content class="content profil" ng-controller="profileController">
-        <div class="picture">
+        <div class="picture" ng-click="getPicture()">
             <img ng-if="profilData.picture" ng-src="{{profilData.picture}}" width="100%" height="100%" />
             <div ng-if="!profilData.picture" class="icon ion-camera"></div>
         </div>
+        <p class="informations">Vos informations sont automatiquement mis à jour sur notre serveur</p>
         <div class="list">
             <div class="item item-toggle">
                 <span class="input-label">Je suis un(e) Babysitter</span>
