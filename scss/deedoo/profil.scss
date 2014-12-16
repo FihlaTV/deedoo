@@ -18,16 +18,16 @@
             margin-top: 0.2em;
         }
         img {
-          width: 100%;
+            width: 100%;
         }
     }
     .item-toggle {
         padding: 6px 0 5px $inputShift;
     }
-  .informations{
-    font-family: 'Source Sans pro', sans-serif;
-    font-size: 0.8em;
-    color: $gray;
-    text-align: center;
-  }
+    .informations {
+        font-family: 'Source Sans pro', sans-serif;
+        font-size: 0.8em;
+        color: $gray;
+        text-align: center;
+    }
 }

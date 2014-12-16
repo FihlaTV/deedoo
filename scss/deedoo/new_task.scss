@@ -1,42 +1,43 @@
 .newTask, .notification, .newNotification {
-  h1 {
-    font-size: 1.7em;
-    margin-top: 10%;
-    margin-bottom: 10%;
-  }
+    h1 {
+        font-size: 1.7em;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
 }
 
 .toggle.toggle-green input:checked + .track {
-  border-color: #78C182 !important;
-  background-color: #78C182 !important;
+    border-color: #78C182 !important;
+    background-color: #78C182 !important;
 }
 
 .notification {
-  .checkbox input:before, .checkbox .checkbox-icon:before {
-    border-color: #979797;
-  }
-  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
-    background-color: #78C182;
-    border: none;
-  }
-  .item-checkbox p {
-    margin-top: 5px;
-  }
-  .btn-gray {
-    margin-bottom: 2%;
-  }
-  .littleInformation {
-    font-size: 0.8em;
-    color: #979797;
-    margin-top: -1em;
-    margin-bottom: 4%;
-    text-align: center;
-  }
-  .item-checkbox {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+    .checkbox input:before, .checkbox .checkbox-icon:before {
+        border-color: #979797;
+    }
+    .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+        background-color: #78C182;
+        border: none;
+    }
+    .item-checkbox p {
+        margin-top: 5px;
+    }
+    .btn-gray {
+        margin-bottom: 2%;
+    }
+    .littleInformation {
+        font-size: 0.8em;
+        color: #979797;
+        margin-top: -1em;
+        margin-bottom: 4%;
+        text-align: center;
+    }
+    .item-checkbox {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
-.newNotification{
+
+.newNotification {
 
 }

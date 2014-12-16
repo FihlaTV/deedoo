@@ -1,95 +1,97 @@
-.working{
-  background-color: $content;
-  .checkbox input:before, .checkbox .checkbox-icon:before {
-    border-color: #979797;
-  }
-  .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
-    background-color: #78C182;
-    border: none;
-  }
-  .no_guards{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 600;
-    color: #929292;
-    line-height: 8px;
-    text-align: center;
-    margin-top: 70%;
-  }
-  h2{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1em;
-    padding-left: 1.5em;
-    padding-top: 1em;
-    span{
-      margin-right: 1%;
+.working {
+    background-color: $content;
+    .checkbox input:before, .checkbox .checkbox-icon:before {
+        border-color: #979797;
     }
-  }
-  .informations{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 0.7em;
-    color: #929292;
-  }
-  .mathieulebg{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 0.8em;
-    color: #929292;
-    font-style: italic;
-    text-align: center;
-    margin-top: 3%;
-  }
-  .checkbox{
-    font-family: 'Source Sans Pro', sans-serif;
-  }
+    .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+        background-color: #78C182;
+        border: none;
+    }
+    .no_guards {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 600;
+        color: #929292;
+        line-height: 8px;
+        text-align: center;
+        margin-top: 70%;
+    }
+    h2 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 1em;
+        padding-left: 1.5em;
+        padding-top: 1em;
+        span {
+            margin-right: 1%;
+        }
+    }
+    .informations {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.7em;
+        color: #929292;
+    }
+    .mathieulebg {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 0.8em;
+        color: #929292;
+        font-style: italic;
+        text-align: center;
+        margin-top: 3%;
+    }
+    .checkbox {
+        font-family: 'Source Sans Pro', sans-serif;
+    }
 }
-.guards{
-  background-color: $content;
-  h2{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1em;
-    padding-left: 1.5em;
-    padding-top: 1em;
-    span{
-      margin-right: 1%;
+
+.guards {
+    background-color: $content;
+    h2 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 1em;
+        padding-left: 1.5em;
+        padding-top: 1em;
+        span {
+            margin-right: 1%;
+        }
     }
-  }
-  .item{
-    padding-left: 1.5em;
-  }
-  .time{
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.2em;
-    color: #2E2E2E;
-  }
-  .list .icon{
-    margin-right: 0.5em;
-  }
-  .list{
-    .left{
-      float: left;
+    .item {
+        padding-left: 1.5em;
     }
-    .moreInformation{
-      margin-right: 0.5em;
+    .time {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 1.2em;
+        color: #2E2E2E;
     }
-    .ion-ios-arrow-right{
-      font-size: 2em;
-      float: right;
-      margin-top: 1.5%;
+    .list .icon {
+        margin-right: 0.5em;
     }
-  }
+    .list {
+        .left {
+            float: left;
+        }
+        .moreInformation {
+            margin-right: 0.5em;
+        }
+        .ion-ios-arrow-right {
+            font-size: 2em;
+            float: right;
+            margin-top: 1.5%;
+        }
+    }
 }
-.informationGuard{
-  .list{
-    display: block;
-    margin-top: 2em;
-    .informations{
-      font-family: 'Source Sans Pro', sans-serif;
-      font-size: 1em;
-      color: #929292;
+
+.informationGuard {
+    .list {
+        display: block;
+        margin-top: 2em;
+        .informations {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 1em;
+            color: #929292;
+        }
     }
-  }
-  .btnContainer{
-    text-align: center;
-    display: block;
-    margin-top: 5em;
-  }
+    .btnContainer {
+        text-align: center;
+        display: block;
+        margin-top: 5em;
+    }
 }
