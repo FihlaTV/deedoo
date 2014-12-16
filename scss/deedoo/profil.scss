@@ -17,8 +17,11 @@
             font-size: 5em;
             margin-top: 0.2em;
         }
+        img {
+          width: 100%;
+        }
     }
     .item-toggle {
-        padding: 6px 0 5px 16px;
+        padding: 6px 0 5px $inputShift;
     }
 }

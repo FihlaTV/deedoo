@@ -10,6 +10,12 @@ $lightGrey: #B0B0B0 !default;
 $darkGrey: #555555 !default;
 
 $mainFont : 'Source Sans Pro', sans-serif;
+$inputShift : 16px;
+
+.input, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  color: $darkGrey;
+  font-size: 16px;
+}
 
 /*
  * LOGO
@@ -22,16 +28,9 @@ $mainFont : 'Source Sans Pro', sans-serif;
     font-size: 1.5em !important;
   }
   .title{
-    font-family: $mainFont;
     font-weight: 600;
     color: white !important;
   }
-}
-.tabs{
-  color: #A3A3A3 !important;
-}
-.tab-item-active{
-  color: $green !important;
 }
 .logo{
   width: 100%;
@@ -68,7 +67,6 @@ $mainFont : 'Source Sans Pro', sans-serif;
   width: 60%;
   display: block;
   margin: auto;
-  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -87,7 +85,6 @@ $mainFont : 'Source Sans Pro', sans-serif;
 .btn-green {
   background-color: $green;
   color: white;
-  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -97,7 +94,6 @@ $mainFont : 'Source Sans Pro', sans-serif;
   border: 1px solid #B0AFB6;
   color: white;
   background-color: #B0AFB6;
-  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -112,7 +108,6 @@ $mainFont : 'Source Sans Pro', sans-serif;
   display: inline-block;
   background-color: $green;
   color: white;
-  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -123,7 +118,6 @@ $mainFont : 'Source Sans Pro', sans-serif;
   display: inline-block;
   background-color: #E5695C;
   color: white;
-  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -134,10 +128,8 @@ $mainFont : 'Source Sans Pro', sans-serif;
  * CONTENT
  */
 .content, .subscribe {
-  font-family: $mainFont;
   background-color: $content;
   h1 {
-    font-family: $mainFont;
     color: $green;
     text-align: center;
   }
@@ -171,14 +163,12 @@ $mainFont : 'Source Sans Pro', sans-serif;
 /*
  * Form style
  */
-$inputShift : 16px;
 
 .item-input {
   padding: 3px 0 3px $inputShift !important;
 }
 
 .input-label, .item-toggle {
-  font-family: $mainFont;
   color: $lightGrey;
 }
 
@@ -208,8 +198,31 @@ textarea {
   padding-top: 10px;
 }
 
-.input, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
-  font-family: $mainFont;
-  color: $darkGrey;
-  font-size: 16px;
+
+
+/*
+ * ITEM
+ */
+
+.item {
+  p {
+
+    font-size: 13px;
+    color: #9B9B9B;
+  }
+}
+
+
+/*
+ * TABS
+ */
+.tabs{
+  color: #A3A3A3 !important;
+}
+.tab-item-active{
+  color: $green !important;
+}
+
+.tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
+  border-color: $green;
 }
