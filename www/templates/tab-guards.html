@@ -18,7 +18,7 @@
             <label class="item"
                    ng-repeat="guard in guards track by $index"
                    ng-if="guard.status == false"
-                   ng-click="confirmGuard(guard.id_room)">
+                   ng-click="confirmGuard(guard.id_room, false)">
                 <div class="left">
                     <p class="time">{{guard.date | date:'d MMMM y'}}</p>
                     <p>
@@ -40,7 +40,7 @@
             <label class="item"
                    ng-repeat="guard in guards track by $index"
                    ng-if="guard.status == true"
-                   ng-click="confirmGuard(guard.id_room)">
+                   ng-click="confirmGuard(guard.id_room, true)">
                 <div class="left">
                     <p class="time">{{guard.date | date:'d MMMM y'}}</p>
                     <p>

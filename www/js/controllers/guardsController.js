@@ -34,13 +34,16 @@ angular.module('deedoo').controller('guardsController', function ($rootScope, $s
         }
     });
 
-
-    $scope.confirmGuard = function (idRoom) {
-        var refRoom     = new Firebase(config.firebaseUrl + 'ROOM/' + idRoom);
-        var syncRoom    = $firebase(refRoom);
-        syncRoom.$update({'status': true}).then(function(){
+    $scope.confirmGuard = function (idRoom, booleen) {
+        if(booleen){
             $state.go('tab.working', {idRoom: idRoom});
-        });
+        }
+        else{
+            var refRoom     = new Firebase(config.firebaseUrl + 'ROOM/' + idRoom);
+            var syncRoom    = $firebase(refRoom);
+            $state.go('informationGuard', {idGuard: idRoom});
+        }
+
     };
 
 });

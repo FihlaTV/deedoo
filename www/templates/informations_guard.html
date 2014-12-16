@@ -9,7 +9,7 @@
     </ion-header-bar>
 
     <!-- CONTENT -->
-    <ion-content class="content informationGuard">
+    <ion-content class="content informationGuard" ng-controller="informationGuardController">
 
         <div class="list">
             <!-- Date -->
@@ -32,10 +32,9 @@
         </div>
 
         <div class="btnContainer">
-            <a ui-sref="" class="btn btn-little-green">Accepter</a>
-            <a ui-sref="" class="btn btn-little-red">Décliner</a>
+            <a ng-click="confirm(true)" class="btn btn-little-green">Accepter</a>
+            <a ng-click="confirm(false)" class="btn btn-little-red">Décliner</a>
         </div>
-
 
     </ion-content>
 
