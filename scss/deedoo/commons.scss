@@ -134,6 +134,7 @@ $mainFont : 'Source Sans Pro', sans-serif;
  * CONTENT
  */
 .content, .subscribe {
+  font-family: $mainFont;
   background-color: $content;
   h1 {
     font-family: $mainFont;
@@ -172,7 +173,7 @@ $mainFont : 'Source Sans Pro', sans-serif;
  */
 $inputShift : 16px;
 
-.input {
+.input, input {
   font-family: $mainFont;
   color: $darkGrey;
   font-size: 16px;
@@ -207,4 +208,8 @@ $inputShift : 16px;
   .radio-icon {
     color: $green;
   }
+}
+
+textarea {
+  padding-top: 10px;
 }
