@@ -1,0 +1,39 @@
+        
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head> 
+        <div class="list">
+            <label class="item"
+                   ng-repeat="guard in guards track by $index"
+                   ng-if="guard.status == false"
+                   ng-click="confirmGuard(guard.id_room, false)">
+                <div class="left">
+                    <p class="time">{{guard.date | date:'d MMMM y'}}</p>
+                    <p>
+                        <span class="icon ion-ios-clock-outline"></span>
+                        <span class="moreInformation">20H - 23H</span>
+                        <span class="icon ion-ios-email-outline"></span>
+                        <span class="moreInformation">Bernard Vong</span>
+                    </p>
+                </div>
+                <div class="icon ion-ios-arrow-right"></div>
+            </label>
+             <label class="item"
+                   ng-repeat="guard in guards track by $index"
+                   ng-if="guard.status == false"
+                   ng-click="confirmGuard(guard.id_room, false)">
+                <div class="left">
+                    <p class="time">{{guard.date | date:'d MMMM y'}}</p>
+                    <p>
+                        <span class="icon ion-ios-clock-outline"></span>
+                        <span class="moreInformation">20H - 23H</span>
+                        <span class="icon ion-ios-email-outline"></span>
+                        <span class="moreInformation">Bernard Vong</span>
+                    </p>
+                </div>
+                <div class="icon ion-ios-arrow-right"></div>
+            </label>
+        </div>
+
+
+         <script src="swipe.js"></script> 
