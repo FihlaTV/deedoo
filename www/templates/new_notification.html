@@ -20,10 +20,12 @@
                 </label>
                 <!-- Time Start -->
                 <label class="item item-input">
+                   <span class="input-label">Heure de début</span>
                     <input type="time" placeholder="Heure de début" ng-model="newNotificationData.timeStart">
                 </label>
                 <!-- Time End -->
                 <label class="item item-input">
+                   <span class="input-label">Heure de fin</span>
                     <input type="time" placeholder="Heure de fin (optionnel)" ng-model="newNotificationData.timeEnd">
                 </label>
                 <br/>
@@ -38,7 +40,7 @@
                     </label>
                 </li>
                 <br/>
-                <label class="item item-input">
+                <label class="item item-input" ng-init="newNotificationData.other = 'Informations complémentaire'">
                     <textarea rows="6" ng-model="newNotificationData.other">Informations complémentaires</textarea>
                 </label>
             </div>

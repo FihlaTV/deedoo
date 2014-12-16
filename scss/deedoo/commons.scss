@@ -6,6 +6,11 @@ $content: #F6F7FA !default;
 $green: #78C182 !default;
 $gray: #A2A2A2 !default;
 
+$lightGrey: #B0B0B0 !default;
+$darkGrey: #555555 !default;
+
+$mainFont : 'Source Sans Pro', sans-serif;
+
 /*
  * LOGO
  */
@@ -17,7 +22,7 @@ $gray: #A2A2A2 !default;
     font-size: 1.5em !important;
   }
   .title{
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: $mainFont;
     font-weight: 600;
     color: white !important;
   }
@@ -63,7 +68,7 @@ $gray: #A2A2A2 !default;
   width: 60%;
   display: block;
   margin: auto;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -77,7 +82,7 @@ $gray: #A2A2A2 !default;
 .btn-green {
   background-color: $green;
   color: white;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -86,7 +91,7 @@ $gray: #A2A2A2 !default;
 .btn-gray {
   background-color: $gray;
   color: white;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -96,7 +101,7 @@ $gray: #A2A2A2 !default;
   display: inline-block;
   background-color: $green;
   color: white;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -107,7 +112,7 @@ $gray: #A2A2A2 !default;
   display: inline-block;
   background-color: #E5695C;
   color: white;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
@@ -120,7 +125,7 @@ $gray: #A2A2A2 !default;
 .content, .subscribe {
   background-color: $content;
   h1 {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: $mainFont;
     color: $green;
     text-align: center;
   }
@@ -151,10 +156,37 @@ $gray: #A2A2A2 !default;
   }
 }
 
+/*
+ * Form style
+ */
+$inputShift : 16px;
+
 .input {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: $mainFont;
+  color: $darkGrey;
+  font-size: 16px;
 }
 
 .item-input {
-  padding: 2px 0 5px 16px !important;
+  padding: 3px 0 3px $inputShift !important;
+}
+
+.input-label, .item-toggle {
+  font-family: $mainFont;
+  color: $lightGrey;
+}
+
+.list {
+  .item + .item {
+    border-top: none;
+  }
+  .item + .item:before {
+    content: "";
+    position: absolute;
+    left: $inputShift;
+    right: 0;
+    top: 0;
+    border-bottom: 1px solid #ddd;
+  }
+  overflow: hidden;
 }
