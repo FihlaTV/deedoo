@@ -70,6 +70,16 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
+            // Board (Parent Only)
+            .state('boardParent', {
+                url  : '/boardparent',
+                views: {
+                    '': {
+                        templateUrl: 'templates/board_parent.html'
+                    }
+                }
+            })
+
             // New Task (Parent Only)
             .state('newTask', {
                 url  : '/newtask',

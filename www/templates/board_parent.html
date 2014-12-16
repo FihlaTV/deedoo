@@ -1,0 +1,74 @@
+<ion-view title="Connect">
+
+    <!-- Header -->
+    <ion-header-bar class="top_bar">
+        <h1 class="title">
+            <div class="deedoo"></div>
+        </h1>
+        <a ui-sref="profil" class="button button-icon icon ion-person right"></a>
+    </ion-header-bar>
+
+    <!-- CONTENT -->
+    <ion-content class="content working boardParent">
+
+        <!-- En ce moment -->
+        <h2>
+            <span class="icon ion-ios-clock-outline"></span>
+            En ce moment
+        </h2>
+        <div class="list">
+            <label class="item">
+                <span class="informations">Olivia Wilde est en train de garder Paul et Léa jusque 00:30.</span>
+            </label>
+        </div>
+
+        <!-- Chut ... -->
+        <h2>
+            <span class="icon ion-ios-moon-outline"></span>
+            Chut ...
+        </h2>
+        <div class="list">
+            <label class="item">
+                <span class="informations">Paul est en train de dormir paisiblement.</span>
+            </label>
+        </div>
+
+        <!-- Reste à faire -->
+        <h2>
+            <span class="icon ion-ios-list-outline"></span>
+            Reste à faire
+        </h2>
+        <ul class="list">
+            <li class="item">
+                Médicaments de Léa
+                <p>20:30-21:00</p>
+            </li>
+        </ul>
+
+        <!-- Déjà fait -->
+        <h2>
+            <span class="icon ion-ios-checkmark-empty"></span>
+            Déjà fait
+        </h2>
+        <ul class="list">
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" ng-checked="true">
+                </label>
+                Médicaments de Léa
+                <p>20:30-21:00</p>
+            </li>
+            <li class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" ng-checked="true">
+                </label>
+                Médicaments de Léa
+                <p>20:30-21:00</p>
+            </li>
+        </ul>
+
+        <a href="" class="btn btn-red">Terminer la garde</a>
+
+    </ion-content>
+
+</ion-view>

@@ -10,15 +10,16 @@
 
     <!-- CONTENT -->
     <ion-content class="content profil" ng-controller="profileController">
-        <div class="picture">
+        <div class="picture" ng-click="getPicture()">
             <img ng-if="profilData.picture" ng-src="{{profilData.picture}}" width="100%" height="100%" />
             <div ng-if="!profilData.picture" class="icon ion-camera"></div>
         </div>
+        <p class="informations">Vos informations sont automatiquement mis à jour sur notre serveur</p>
         <div class="list">
             <div class="item item-toggle">
                 <span class="input-label">Je suis un(e) Babysitter</span>
                 <label class="toggle toggle-assertive toggle-green">
-                    <input type="checkbox" ng-true-value="true" ng-false-value="false">
+                    <input type="checkbox" ng-model="profilData.type" ng-true-value="babysitter" ng-false-value="parent">
                     <div class="track">
                         <div class="handle"></div>
                     </div>
@@ -46,7 +47,7 @@
             </label>
             <label class="item item-input">
                 <span class="input-label">Mot de passe</span>
-                <input type="password" placeholder="Mot de passe" value="******" />
+                <input type="password" placeholder="Mot de passe" ng-model="profilData.password"/>
             </label>
         </div>
     </ion-content>

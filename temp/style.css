@@ -1,0 +1,11 @@
+div
+{
+	background-color: green;
+}
+.left
+{
+	background-color: gray;
+	position: relative;
+    border: black solid 1px;
+}
+
