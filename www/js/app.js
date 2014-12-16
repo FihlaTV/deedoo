@@ -72,7 +72,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
 
             // Board (Parent Only)
             .state('boardParent', {
-                url  : '/boardparent',
+                url  : '/boardparent/:idRoom',
                 views: {
                     '': {
                         templateUrl: 'templates/board_parent.html'

@@ -54,6 +54,27 @@
             </label>
         </div>
 
+        <h2>
+            <span class="icon ion-ios-heart-outline"></span>
+            Gardes terminées
+        </h2>
+        <div class="list">
+            <label class="item"
+                   ng-repeat="guard in guards track by $index"
+                   ng-if="guard.status == 'done'">
+                <div class="left">
+                    <p class="time">{{guard.date | date:'d MMMM y'}}</p>
+                    <p>
+                        <span class="icon ion-ios-clock-outline"></span>
+                        <span class="moreInformation">{{guard.time_beginning+'-'+guard.time_ending}}</span>
+                        <span class="icon ion-ios-email-outline"></span>
+                        <span class="moreInformation">{{ guard.parent_firstname+' '+guard.parent_lastname}}</span>
+                    </p>
+                </div>
+                <div class="icon ion-ios-arrow-right"></div>
+            </label>
+        </div>
+
     </ion-content>
 
 </ion-view>

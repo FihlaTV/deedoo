@@ -19,7 +19,6 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
         syncRoom    = $firebase(refRoom),
         syncTask    = $firebase(refTask),
         sync        = $firebase(ref),
-        tasks       = $firebase(refTask).$asArray(),
         members     = $firebase(ref).$asArray(),
         rooms       = $firebase(refRoom).$asArray(),
         roomId;
@@ -148,38 +147,53 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
 
             }).then(function(){
 
-                // Add one per one notifications in firebase
-                for(var i in $rootScope.notifications){
-                    if($rootScope.notifications[i].added){
+                var length = $rootScope.notifications.length -1;
 
-                        var task = {
-                            'id_room'       : roomId,
-                            'message'       : $rootScope.notifications[i].title,
-                            'status'        : 0,
-                            'time_beginning': ($rootScope.notifications[i].timeStart != "") ? $rootScope.notifications[i].timeStart : "",
-                            'time_ending'   : ($rootScope.notifications[i].timeEnd != "") ? $rootScope.notifications[i].timeEnd : ""
-                        };
+                function addTask(i) {
+                    if(i < 0){
+                        console.log('Done');
+                    }
+                    else{
+                        if($rootScope.notifications[i].added){
 
-                        if($rootScope.notifications[i].children == null){
-                           task['children'] = null;
+                            var task = {
+                                'id_room'       : roomId,
+                                'message'       : $rootScope.notifications[i].title,
+                                'status'        : 0,
+                                'time_beginning': ($rootScope.notifications[i].timeStart != "") ? $rootScope.notifications[i].timeStart : "",
+                                'time_ending'   : ($rootScope.notifications[i].timeEnd != "") ? $rootScope.notifications[i].timeEnd : ""
+                            };
+
+                            if($rootScope.notifications[i].children == null){
+                                task['children'] = null;
+                            }
+                            else{
+                                task['children'] = [];
+                                for(var j in $rootScope.notifications[i].children){
+                                    task['children'].push($rootScope.notifications[i].children[j]);
+                                }
+                            }
+                            // Other
+                            if($rootScope.notifications[i].other != null) {
+                                task['other'].push($rootScope.notifications[i].other);
+                            }
+
+                            var tasks = $firebase(refTask).$asArray();
+                            tasks.$loaded(function (resultTasks) {
+                                syncTask.$set(resultTasks.length, task).then(function(){
+                                    addTask(i-1);
+                                });
+                            });
+
                         }
                         else{
-                            task['children'] = [];
-                            for(var j in $rootScope.notifications[i].children){
-                                task['children'].push($rootScope.notifications[i].children[j]);
-                            }
+                            addTask(i-1);
                         }
-                        // Other
-                        if($rootScope.notifications[i].other != null) {
-                            task['other'].push($rootScope.notifications[i].other);
-                        }
-
-                        tasks.$loaded(function (resultTasks) {
-                            syncTask.$set(resultTasks.length, task);
-                        });
-
                     }
+
                 }
+
+                addTask(length);
 
             });
 

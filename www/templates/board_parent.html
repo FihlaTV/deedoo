@@ -9,7 +9,7 @@
     </ion-header-bar>
 
     <!-- CONTENT -->
-    <ion-content class="content working boardParent">
+    <ion-content class="content working boardParent" ng-controller="boardMotherController">
 
         <!-- En ce moment -->
         <h2>
@@ -18,7 +18,11 @@
         </h2>
         <div class="list">
             <label class="item">
-                <span class="informations">Olivia Wilde est en train de garder Paul et Léa jusque 00:30.</span>
+                <span class="informations">
+                    {{babysitter.firstname+' '+babysitter.lastname}} est en train de garder
+                    <span ng-repeat="child in children">{{child.name}} </span>
+                    jusque {{timeEnding}}.
+                </span>
             </label>
         </div>
 
@@ -28,8 +32,8 @@
             Chut ...
         </h2>
         <div class="list">
-            <label class="item">
-                <span class="informations">Paul est en train de dormir paisiblement.</span>
+            <label class="item" ng-repeat="child in children" ng-show="child.sleeping">
+                <span class="informations">{{child.name}} est en train de dormir paisiblement.</span>
             </label>
         </div>
 
@@ -39,9 +43,10 @@
             Reste à faire
         </h2>
         <ul class="list">
-            <li class="item">
-                Médicaments de Léa
-                <p>20:30-21:00</p>
+            <li class="item" ng-repeat="task in tasks" ng-if="task.status == 0">
+                {{task.message}}
+                <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
+                <p ng-if="task.time_beginning == null">Aucune heure définie</p>
             </li>
         </ul>
 
@@ -51,23 +56,17 @@
             Déjà fait
         </h2>
         <ul class="list">
-            <li class="item item-checkbox">
+            <li class="item item-checkbox" ng-repeat="task in tasks" ng-if="task.status == 1">
                 <label class="checkbox">
                     <input type="checkbox" ng-checked="true">
                 </label>
-                Médicaments de Léa
-                <p>20:30-21:00</p>
-            </li>
-            <li class="item item-checkbox">
-                <label class="checkbox">
-                    <input type="checkbox" ng-checked="true">
-                </label>
-                Médicaments de Léa
-                <p>20:30-21:00</p>
+                {{task.message}}
+                <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
+                <p ng-if="task.time_beginning == null">Aucune heure définie</p>
             </li>
         </ul>
 
-        <a href="" class="btn btn-red">Terminer la garde</a>
+        <a ng-click="endGuard()" class="btn btn-red">Terminer la garde</a>
 
     </ion-content>
 
