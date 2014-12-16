@@ -3,6 +3,14 @@
 angular.module('deedoo').controller('guardsController', function ($rootScope, $scope, $state, $firebase, config) {
 
     /*
+     * Must be connect
+     */
+    if(!config.logged){
+        $state.go('connect');
+        return;
+    }
+
+    /*
      * Firebase
      */
     var ref     = new Firebase(config.firebaseUrl + 'ROOM'),
@@ -28,7 +36,6 @@ angular.module('deedoo').controller('guardsController', function ($rootScope, $s
                     'parent_firstname'  : rooms[i].firstname_parent
                 });
 
-                console.log($rootScope.guards);
             }
 
         }

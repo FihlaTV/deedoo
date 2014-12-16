@@ -5,10 +5,10 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
     /*
      * If user is no connected -> Redirect to connect
      */
-    //if(!config.user.logged){
-    //    $state.go('connect');
-    //    return;
-    //}
+    if(!config.logged){
+        $state.go('connect');
+        return;
+    }
 
     /*
      * Get Informations from Firebase

@@ -3,11 +3,25 @@
 angular.module('deedoo').controller('profileController', function ($rootScope, $scope, $state, $firebase, config, $filter) {
 
     /*
+     * Must be connect
+     */
+    if(!config.logged){
+        $state.go('connect');
+        return;
+    }
+
+    /*
      * GetMember
      */
     var ref = new Firebase(config.firebaseUrl + 'MEMBERS/' + config.user.$id),
         syncMember = $firebase(ref);
 
+    /*
+     * Buttons Back
+     */
+    $scope.back = function () {
+        $state.go((config.user.type == 'parent') ? 'newTask': 'tab.guards');
+    };
 
     $scope.$watch('profilData', function () {
 
