@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $state, $filter, $firebase, config, camera) {
+angular.module('deedoo').controller('subscribeController', function ($rootScope, $scope, $state, $filter, $firebase, $ionicSlideBoxDelegate, config, camera) {
 
     /*
      * Get Informations from Firebase
@@ -12,6 +12,13 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
 
     $rootScope.subscribeData = {};
     $rootScope.subscribeGood = true;
+
+    /*
+     * Automatic change Slide when we change Type
+     */
+    $scope.$watch('subscribeData.type', function () {
+        $ionicSlideBoxDelegate.next();
+    });
 
     /*
      * Subscribe the USER
