@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('loginController', function ($scope, $state, $filter, $firebase, config, localStorage) {
+angular.module('deedoo').controller('loginController', function ($scope, $state, $filter, $firebase, config) {
 
     /*
      * Get Informations from Firebase
@@ -13,21 +13,22 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
      */
     $scope.connect = function () {
 
-        members.$loaded().then(function (result) {
+        if($scope.data.email != null && $scope.data.password != null){
+            members.$loaded().then(function (result) {
 
-            for (var i = 0; i < result.length; i++) {
+                for (var i = 0; i < result.length; i++) {
 
-                if (members[i].mail == $scope.data.email && members[i].password == $filter('hash')($scope.data.password+config.sold)) {
-                    config.user = members[i];
-                    config.logged = true;
-                    $state.go((members[i].type == 'parent') ? 'newTask': 'tab.guards');
+                    if (members[i].mail == $scope.data.email && members[i].password == $filter('hash')($scope.data.password+config.sold)) {
+                        config.user = members[i];
+                        config.logged = true;
+                        $state.go((members[i].type == 'parent') ? 'newTask': 'tab.guards');
+                    }
+
                 }
 
-            }
-
-        });
+            });
+        }
 
     };
-
 
 });

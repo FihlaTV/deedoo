@@ -13,6 +13,9 @@ angular.module('deedoo', ['ionic', 'firebase'])
             if (window.StatusBar) {
                 StatusBar.show();
             }
+            setTimeout(function() {
+                navigator.splashscreen.hide();
+            }, 3000);
         });
     })
     /*

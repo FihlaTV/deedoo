@@ -77,6 +77,11 @@ $mainFont : 'Source Sans Pro', sans-serif;
   padding-bottom: 0.4em;
   border: 1px solid white;
   border-radius: 10px;
+  transition: all 0.5s;
+}
+.btn-light.activated{
+  background-color: white;
+  color: $green;
 }
 
 .btn-green {
@@ -89,13 +94,19 @@ $mainFont : 'Source Sans Pro', sans-serif;
 }
 
 .btn-gray {
-  background-color: $gray;
+  border: 1px solid #B0AFB6;
   color: white;
+  background-color: #B0AFB6;
   font-family: $mainFont;
   font-size: 1.3em;
   text-align: center;
   line-height: 2em;
+  transition: all 0.5s;
 }
+.btn-gray.activated{
+  background-color: #9E9CA4;
+}
+
 .btn-little-green{
   width: 30% !important;
   display: inline-block;
