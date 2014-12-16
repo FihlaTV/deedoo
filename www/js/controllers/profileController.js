@@ -13,8 +13,8 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
     /*
      * GetMember
      */
-    var ref = new Firebase(config.firebaseUrl + 'MEMBERS/' + config.user.$id),
-        syncMember = $firebase(ref);
+    var ref         = new Firebase(config.firebaseUrl + 'MEMBERS/' + config.user.$id),
+        syncMember  = $firebase(ref);
 
     /*
      * Buttons Back
