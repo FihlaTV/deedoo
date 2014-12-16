@@ -9,12 +9,51 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
         $state.go('connect');
         return;
     }
+    else{
+        $scope.profilData = {};
+    }
 
     /*
      * GetMember
      */
     var ref         = new Firebase(config.firebaseUrl + 'MEMBERS/' + config.user.$id),
-        syncMember  = $firebase(ref);
+        syncMember  = $firebase(ref).$asObject();
+
+    /*
+     * Informations Users From Firebase
+     */
+    syncMember.$loaded().then(function(result){
+        $scope.profilData = {
+            'firstname' : result.firstname,
+            'lastname'  : result.lastname,
+            'phone'     : result.phone,
+            'email'     : result.mail,
+            'picture'   : result.picture,
+            'type'      : result.type,
+            'password'  : result.password
+        };
+    }).then(function() {
+
+        var sync = $firebase(ref);
+
+        /*
+         * If Others informations in ProfilData change
+         */
+        $scope.$watch('profilData.firstname + profilData.lastname + profilData.mail + profilData.phone + profilData.type', function () {
+
+                sync.$update({
+                    'firstname': $scope.profilData.firstname,
+                    'lastname'  : $scope.profilData.lastname,
+                    'mail'     : $scope.profilData.email,
+                    'phone'    : $scope.profilData.phone,
+                    'type'     : $scope.profilData.type
+                }).then(function () {
+                    console.log('Hey');
+                });
+
+            }
+        );
+    });
 
     /*
      * Buttons Back
@@ -22,23 +61,5 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
     $scope.back = function () {
         $state.go((config.user.type == 'parent') ? 'newTask': 'tab.guards');
     };
-
-    $scope.$watch('profilData', function () {
-
-            syncMember.$update({
-                'firstname': $scope.profilData.firstname,
-                'lastame'  : $scope.profilData.lastname,
-                'mail'     : $scope.profilData.mail,
-                'password' : $filter('hash')(scope.profilData.password + config.sold),
-                'phone'    : $scope.profilData.phone,
-                'type'     : (parent) ? 'babysitter' : 'parent'
-            }).then(function () {
-                // config.user à modifier avec les nouvelles valeurs de l'utlisateurs
-                console.log('hey');
-            });
-
-        }
-    );
-
 
 });
