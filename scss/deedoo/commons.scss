@@ -173,6 +173,10 @@ $inputShift : 16px;
  * Form style
  */
 
+.item {
+  background-color: #FFFFFF!important;
+}
+
 .item-input {
   padding: 3px 0 3px $inputShift !important;
 }
