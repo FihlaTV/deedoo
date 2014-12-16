@@ -138,8 +138,10 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
 
                     var refRoom = new Firebase(config.firebaseUrl + 'ROOM/'+roomId);
 
-                    refRoom.orderByChild('status').on('child_changed', function(){
+                    refRoom.orderByChild('status').on('child_changed', function()
+                    {
                         console.log('Room Changed');
+                        $state.go('boardParent', { idRoom: roomId });
                     });
 
                 });
