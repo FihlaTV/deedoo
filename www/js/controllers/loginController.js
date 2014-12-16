@@ -8,14 +8,12 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
     var ref     = new Firebase(config.firebaseUrl+'MEMBERS'),
         members = $firebase(ref).$asArray();
 
+
     /*
      * Connect the USER
      */
     $scope.connect = function () {
 
-        /*
-         * check if we have Values of Email & Password
-         */
         if($scope.data.email != null && $scope.data.password != null){
 
             members.$loaded().then(function (result) {
