@@ -93,6 +93,15 @@ $mainFont : 'Source Sans Pro', sans-serif;
   line-height: 2em;
 }
 
+.btn-red {
+  background-color: #E5695C;
+  color: white;
+  font-family: $mainFont;
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 2em;
+}
+
 .btn-gray {
   border: 1px solid #B0AFB6;
   color: white;
