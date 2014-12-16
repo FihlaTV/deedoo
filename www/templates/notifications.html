@@ -21,13 +21,18 @@
                     <label class="checkbox">
                         <input type="checkbox" ng-click="confirmNotification($index)" ng-checked="notification.added">
                     </label>
-                    {{notification.title}} <span ng-if="notification.children">( <span ng-repeat="child in notification.children">{{child}} </span>)</span>
-                    <p ng-if="notification.timeStart && notification.timeEnd">{{notification.timeStart}}-{{notification.timeEnd}}</p>
+                    {{notification.title}} <span ng-if="notification.children">( <span
+                        ng-repeat="child in notification.children">{{child}} </span>)</span>
+
+                    <p ng-if="notification.timeStart && notification.timeEnd">
+                        {{notification.timeStart}}-{{notification.timeEnd}}</p>
+
                     <p ng-if="!notification.timeStart && !notification.timeEnd">Aucune heure définie</p>
                 </li>
 
             </ul>
-            <p class="littleInformation">Ajoutez des recommandations pour être notifié(e) lorsqu’elles seront réalisées.</p>
+            <p class="littleInformation">Ajoutez des recommandations pour être notifié(e) lorsqu’elles seront
+                réalisées.</p>
             <a ui-sref="newNotification" class="btn btn-gray">Ajouter une recommandation</a>
             <input type="submit" class="btn btn-green" value="OK"/>
         </form>

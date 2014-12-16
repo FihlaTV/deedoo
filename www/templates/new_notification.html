@@ -15,16 +15,17 @@
             <div class="list">
                 <!-- Title -->
                 <label class="item item-input">
-                    <input type="text" placeholder="Libellé de la recommandation" ng-model="newNotificationData.title" required="required">
+                    <input type="text" placeholder="Libellé de la recommandation" ng-model="newNotificationData.title"
+                           required="required">
                 </label>
                 <!-- Time Start -->
                 <label class="item item-input">
-                   <span class="input-label">Heure de début</span>
+                    <span class="input-label">Heure de début</span>
                     <input type="time" placeholder="Heure de début" ng-model="newNotificationData.timeStart">
                 </label>
                 <!-- Time End -->
                 <label class="item item-input">
-                   <span class="input-label">Heure de fin</span>
+                    <span class="input-label">Heure de fin</span>
                     <input type="time" placeholder="Heure de fin (optionnel)" ng-model="newNotificationData.timeEnd">
                 </label>
                 <br/>
@@ -32,7 +33,9 @@
                 <li class="item item-toggle" ng-repeat="child in children">
                     {{child.name}}
                     <label class="toggle toggle-assertive toggle-green">
-                        <input type="checkbox" ng-model="newNotificationData.children[$index]" ng-true-value="true" ng-false-value="false">
+                        <input type="checkbox" ng-model="newNotificationData.children[$index]" ng-true-value="true"
+                               ng-false-value="false">
+
                         <div class="track">
                             <div class="handle"></div>
                         </div>
@@ -41,7 +44,7 @@
                 <br/>
                 <label class="item item-input" ng-init="newNotificationData.other = 'Informations complémentaire'">
                     <textarea rows="6" ng-model="newNotificationData.other">Informations complémentaires</textarea>
-              </label>
+                </label>
             </div>
 
             <!-- BTN -->

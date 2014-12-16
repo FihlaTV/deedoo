@@ -39,7 +39,8 @@
                     <select ng-model="newTaskForm.babysitterId">
                         <option value="null" selected>Aucune</option>
                         <option ng-repeat="babysitter in babysitters"
-                                value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}</option>
+                                value="{{babysitter.$id}}">{{babysitter.firstname + ' ' +babysitter.lastname}}
+                        </option>
                     </select>
                 </label>
                 <br/>
@@ -47,7 +48,9 @@
                 <li class="item item-toggle" ng-repeat="child in children">
                     {{child.name}}
                     <label class="toggle toggle-assertive toggle-green">
-                        <input type="checkbox" ng-model="newTaskForm.children[$index]" ng-true-value="true" ng-false-value="false">
+                        <input type="checkbox" ng-model="newTaskForm.children[$index]" ng-true-value="true"
+                               ng-false-value="false">
+
                         <div class="track">
                             <div class="handle"></div>
                         </div>
@@ -57,14 +60,15 @@
                 <!-- Notifications -->
                 <label class="item item-input" ui-sref="notifications">
                     <span class="input-label">Notification(s)</span>
+
                     <p>{{notificationsCount}}</p>
                 </label>
 
             </div>
             <input ng-if="!good" type="submit" class="btn btn-green" value="Envoyer la demande">
+
             <p ng-if="good" class="btn btn-gray">Demande envoyée</p>
         </form>
-
 
 
     </ion-content>

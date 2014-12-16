@@ -3,6 +3,7 @@
     <!-- Header -->
     <ion-header-bar class="top_bar">
         <a ui-sref="help" class="button button-icon right">Aide</a>
+
         <h1 class="title">
             <div class="deedoo"></div>
         </h1>
@@ -14,6 +15,7 @@
             <span class="icon ion-ios-filing-outline"></span>
             Invitations reçues
         </h2>
+
         <div class="list">
             <label class="item"
                    ng-repeat="guard in guards track by $index"
@@ -21,6 +23,7 @@
                    ng-click="confirmGuard(guard.id_room, false)">
                 <div class="left">
                     <p class="time">{{guard.date | date:'d MMMM y'}}</p>
+
                     <p>
                         <span class="icon ion-ios-clock-outline"></span>
                         <span class="moreInformation">{{guard.time_beginning+'-'+guard.time_ending}}</span>
@@ -36,6 +39,7 @@
             <span class="icon ion-ios-checkmark-empty"></span>
             Invitations acceptées
         </h2>
+
         <div class="list">
             <label class="item"
                    ng-repeat="guard in guards track by $index"
@@ -43,6 +47,7 @@
                    ng-click="confirmGuard(guard.id_room, true)">
                 <div class="left">
                     <p class="time">{{guard.date | date:'d MMMM y'}}</p>
+
                     <p>
                         <span class="icon ion-ios-clock-outline"></span>
                         <span class="moreInformation">{{guard.time_beginning+'-'+guard.time_ending}}</span>
@@ -58,12 +63,14 @@
             <span class="icon ion-ios-heart-outline"></span>
             Gardes terminées
         </h2>
+
         <div class="list">
             <label class="item"
                    ng-repeat="guard in guards track by $index"
                    ng-if="guard.status == 'done'">
                 <div class="left">
                     <p class="time">{{guard.date | date:'d MMMM y'}}</p>
+
                     <p>
                         <span class="icon ion-ios-clock-outline"></span>
                         <span class="moreInformation">{{guard.time_beginning+'-'+guard.time_ending}}</span>

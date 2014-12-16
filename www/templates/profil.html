@@ -3,6 +3,7 @@
     <!-- Header -->
     <ion-header-bar class="top_bar" ng-controller="profileController">
         <a ng-click="back()" class="button button-icon icon ion-chevron-left left"></a>
+
         <h1 class="title">
             Mon Compte
         </h1>
@@ -11,15 +12,19 @@
     <!-- CONTENT -->
     <ion-content class="content profil" ng-controller="profileController">
         <div class="picture" ng-click="getPicture()">
-            <img ng-if="profilData.picture" ng-src="{{profilData.picture}}" width="100%" height="100%" />
+            <img ng-if="profilData.picture" ng-src="{{profilData.picture}}" width="100%" height="100%"/>
+
             <div ng-if="!profilData.picture" class="icon ion-camera"></div>
         </div>
         <p class="informations">Modifiez vos informations, elles seront automatiquement mises à jour</p>
+
         <div class="list">
             <div class="item item-toggle">
                 <span class="input-label">Je suis un(e) Babysitter</span>
                 <label class="toggle toggle-assertive toggle-green">
-                    <input type="checkbox" ng-model="profilData.type" ng-true-value="babysitter" ng-false-value="parent">
+                    <input type="checkbox" ng-model="profilData.type" ng-true-value="babysitter"
+                           ng-false-value="parent">
+
                     <div class="track">
                         <div class="handle"></div>
                     </div>
@@ -29,21 +34,21 @@
         <div class="list">
             <label class="item item-input">
                 <span class="input-label">Prénom</span>
-                <input type="text" placeholder="Prénom" ng-model="profilData.firstname" />
+                <input type="text" placeholder="Prénom" ng-model="profilData.firstname"/>
             </label>
             <label class="item item-input">
                 <span class="input-label">Nom</span>
-                <input type="text" placeholder="Nom" ng-model="profilData.lastname" />
+                <input type="text" placeholder="Nom" ng-model="profilData.lastname"/>
             </label>
             <label class="item item-input">
                 <span class="input-label">Téléphone</span>
-                <input type="tel" placeholder="N° de mobile" ng-model="profilData.phone" />
+                <input type="tel" placeholder="N° de mobile" ng-model="profilData.phone"/>
             </label>
         </div>
         <div class="list">
             <label class="item item-input">
                 <span class="input-label">Email</span>
-                <input type="email" placeholder="E-mail" ng-model="profilData.email" />
+                <input type="email" placeholder="E-mail" ng-model="profilData.email"/>
             </label>
             <label class="item item-input">
                 <span class="input-label">Mot de passe</span>

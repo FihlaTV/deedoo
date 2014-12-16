@@ -3,6 +3,7 @@
     <!-- Header -->
     <ion-header-bar class="top_bar">
         <a ui-sref="help" class="button button-icon right">Aide</a>
+
         <h1 class="title">
             <div class="deedoo"></div>
         </h1>
@@ -12,7 +13,9 @@
     <ion-content class="working" ng-controller="workingController">
         <div ng-show="!working" class="no_guards">
             <p>Vous n’avez aucune garde en cours.</p>
+
             <p>Réceptionnez les demandes dans « Mes gardes »,</p>
+
             <p>les recommandations s’afficheront ici le moment venu.</p>
         </div>
         <div ng-show="working">
@@ -40,6 +43,7 @@
                     </label>
                     {{task.message}}
                     <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
+
                     <p ng-if="task.time_beginning == null">Aucune heure définie</p>
                 </li>
             </ul>
@@ -58,6 +62,7 @@
                     </label>
                     {{task.message}}
                     <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
+
                     <p ng-if="task.time_beginning == null">Aucune heure définie</p>
                 </li>
             </ul>

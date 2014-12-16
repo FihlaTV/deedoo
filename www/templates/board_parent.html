@@ -16,6 +16,7 @@
             <span class="icon ion-ios-clock-outline"></span>
             En ce moment
         </h2>
+
         <div class="list">
             <label class="item">
                 <span class="informations">
@@ -31,6 +32,7 @@
             <span class="icon ion-ios-moon-outline"></span>
             Chut ...
         </h2>
+
         <div class="list">
             <label class="item" ng-repeat="child in children" ng-show="child.sleeping">
                 <span class="informations">{{child.name}} est en train de dormir paisiblement.</span>
@@ -46,6 +48,7 @@
             <li class="item" ng-repeat="task in tasks" ng-if="task.status == 0">
                 {{task.message}}
                 <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
+
                 <p ng-if="task.time_beginning == null">Aucune heure définie</p>
             </li>
         </ul>
@@ -62,6 +65,7 @@
                 </label>
                 {{task.message}}
                 <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
+
                 <p ng-if="task.time_beginning == null">Aucune heure définie</p>
             </li>
         </ul>
