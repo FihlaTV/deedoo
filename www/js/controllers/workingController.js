@@ -84,6 +84,8 @@ angular.module('deedoo').controller('workingController', function ($scope, $root
             syncRoom.$update({'sleeping': true});
             $rootScope.childrenSleeping[index].sleeping = true;
         }
+
+        $state.go('tab.working', {idRoom: $scope.idRoom});
     };
 
 });
