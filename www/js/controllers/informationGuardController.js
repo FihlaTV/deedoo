@@ -27,10 +27,7 @@ angular.module('deedoo').controller('informationGuardController', function ($roo
      * Informations guard
      */
     room.$loaded().then(function (result) {
-        var mois            = ['janvier','février','mars','avril','mai','juin',
-                              'juillet','août','septembre','octobre','novembre','décembre'],
-            dateGuard       = new Date(result.date),
-            childrens       = '',
+        var childrens       = '',
             first           = true;
 
 
@@ -51,9 +48,7 @@ angular.module('deedoo').controller('informationGuardController', function ($roo
             'lastname_parent'     : result.lastname_parent,
             'time_beginning'      : result.time_beginning,
             'time_ending'         : result.time_ending,
-            'date'                : dateGuard.getDate() + ' '
-                                    + mois[dateGuard.getMonth()] + ' '
-                                    + dateGuard.getFullYear(),
+            'date'                : result.date,
             'childrens'           : childrens
         };
 
