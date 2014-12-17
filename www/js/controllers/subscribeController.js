@@ -44,6 +44,7 @@ angular.module('deedoo').controller('subscribeController', function ($rootScope,
 
                 // TODO Change this
                 if (angular.isDefined(subscribeData.children)) {
+                    children = [];
                     if (angular.isDefined(subscribeData.children.one)) {
                         children.push(subscribeData.children.one);
                     }
