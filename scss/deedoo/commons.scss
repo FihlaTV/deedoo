@@ -39,7 +39,7 @@ $inputShift: 16px;
     display: block;
     margin: auto;
     background: url('../img/deedoo.svg') no-repeat center;
-    background-size: 50% 50%;
+    background-size: 30% 30%;
 }
 
 .deedoo {
@@ -91,6 +91,9 @@ $inputShift: 16px;
     font-size: 1.3em;
     text-align: center;
     line-height: 2em;
+    &:focus, &:active {
+        background: #6AAB73;
+    }
 }
 
 .btn-red {
