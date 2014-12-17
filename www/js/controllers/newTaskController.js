@@ -147,7 +147,7 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
             }).then(function () {
 
                 var length = $rootScope.notifications.length - 1;
-
+                
                 function addTask(i) {
                     if (i < 0) {
                         return 0;
@@ -160,7 +160,8 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                                 'message'       : $rootScope.notifications[i].title,
                                 'status'        : 0,
                                 'time_beginning': ($rootScope.notifications[i].timeStart != "") ? $rootScope.notifications[i].timeStart : "",
-                                'time_ending'   : ($rootScope.notifications[i].timeEnd != "") ? $rootScope.notifications[i].timeEnd : ""
+                                'time_ending'   : ($rootScope.notifications[i].timeEnd != "") ? $rootScope.notifications[i].timeEnd : "",
+                                'other'         : null
                             };
 
                             if ($rootScope.notifications[i].children == null) {
@@ -174,7 +175,7 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                             }
                             // Other
                             if ($rootScope.notifications[i].other != null) {
-                                task['other'].push($rootScope.notifications[i].other);
+                                task['other'] = $rootScope.notifications[i].other;
                             }
 
                             var tasks = $firebase(refTask).$asArray();
