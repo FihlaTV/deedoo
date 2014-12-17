@@ -14,7 +14,7 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
      */
     $scope.connect = function () {
 
-        if ($scope.data.email != null && $scope.data.password != null) {
+        if ($scope.data != undefined && $scope.data.email != null && $scope.data.password != null) {
 
             members.$loaded().then(function (result) {
                 var length = result.length-1;
