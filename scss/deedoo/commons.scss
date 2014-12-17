@@ -242,3 +242,21 @@ textarea {
 .tabs-striped .tab-item.tab-item-active, .tabs-striped .tab-item.active, .tabs-striped .tab-item.activated {
     border-color: $green;
 }
+
+.popup-container .popup{
+  background-color: #F6F7FA;
+}
+.popup-body{
+  text-align: center;
+}
+.popup-buttons{
+  .button{
+    border: none;
+    background-color: $darkGrey;
+    color: white;
+  }
+  .button-positive{
+    background-color: $green;
+  }
+}
+

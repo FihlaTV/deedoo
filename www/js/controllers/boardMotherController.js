@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('boardMotherController', function ($scope, $stateParams, $firebase, $state, config, notification) {
+angular.module('deedoo').controller('boardMotherController', function ($scope, $stateParams, $firebase, $state, config, notification, $ionicPopup) {
 
     /*
      * Must be connect
@@ -80,9 +80,21 @@ angular.module('deedoo').controller('boardMotherController', function ($scope, $
      * End Guard (Status -> done)
      */
     $scope.endGuard = function () {
-        $firebase(ref).$update({'status': 'done'}).then(function () {
-            $state.go('newTask');
+
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'Deedoo',
+            template: 'Souhaitez-vous terminer la garde maintenant ?',
+            okText: 'Oui',
+            cancelText: 'Non'
         });
+        confirmPopup.then(function(res) {
+            if(res) {
+                $firebase(ref).$update({'status': 'done'}).then(function () {
+                    $state.go('newTask');
+                });
+            }
+        });
+        
     };
 
 });

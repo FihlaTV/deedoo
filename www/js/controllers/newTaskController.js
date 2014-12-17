@@ -140,14 +140,17 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                     /*
                      * If BackgroundMode
                      */
-                    cordova.plugins.backgroundMode.onactivate = function () {
+                    if (window.cordova){
+                        cordova.plugins.backgroundMode.onactivate = function () {
 
-                        refRoom.orderByChild('status').on('child_changed', function () {
-                            notification.add('Votre demande de garde a été acceptée');
-                            $state.go('boardParent', {idRoom: roomId});
-                        });
+                            refRoom.orderByChild('status').on('child_changed', function () {
+                                notification.add('Votre demande de garde a été acceptée');
+                                $state.go('boardParent', {idRoom: roomId});
+                            });
 
-                    };
+                        };
+                    }
+
                     /*
                      * Else
                      */
