@@ -147,7 +147,7 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
             }).then(function () {
 
                 var length = $rootScope.notifications.length - 1;
-                
+
                 function addTask(i) {
                     if (i < 0) {
                         return 0;
