@@ -56,6 +56,7 @@ angular.module('deedoo').controller('boardMotherController', function ($scope, $
      */
     ref.orderByChild('sleeping').on('child_changed', function (result) {
         $scope.children = result.val();
+        notification.add('Un de vos enfant dort paisiblement');
     });
 
     /*
@@ -94,7 +95,7 @@ angular.module('deedoo').controller('boardMotherController', function ($scope, $
                 });
             }
         });
-        
+
     };
 
 });
