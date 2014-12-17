@@ -14,6 +14,7 @@ angular.module('deedoo').controller('workingController', function ($scope, $root
         return;
     }
 
+
     /*
      * Firebase
      */

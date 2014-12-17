@@ -39,7 +39,7 @@ angular.module('deedoo').controller('newNotificationController', function ($root
         var notification = {
             "added"    : true,
             "title"    : $scope.newNotificationData.title,
-            "timeStart": $scope.newNotificationData.timeStart,
+            "timeStart": ($scope.newNotificationData.timeStart) ? $scope.newNotificationData.timeStart : "",
             "timeEnd"  : ($scope.newNotificationData.timeEnd) ? $scope.newNotificationData.timeEnd : "",
             "other"    : $scope.newNotificationData.other,
             "children" : null
