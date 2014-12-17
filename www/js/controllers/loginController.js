@@ -1,5 +1,12 @@
 'use strict';
 
+
+/*
+ *  Controller of connect.html 
+ *  --> Page for: PARENT & BABYSITTER | User connection 
+*/ 
+
+
 angular.module('deedoo').controller('loginController', function ($scope, $state, $filter, $firebase, config) {
 
     /*

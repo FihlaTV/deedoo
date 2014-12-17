@@ -1,5 +1,13 @@
 'use strict';
 
+
+/*
+ *  Controller of tab-guards.html 
+ *  --> Page for: BABYSITTER | List of guard accepted/waiting/finished
+*/ 
+
+
+
 angular.module('deedoo').controller('guardsController', function ($rootScope, $scope, $state, $firebase, config) {
 
     /*

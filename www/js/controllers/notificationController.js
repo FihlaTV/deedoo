@@ -1,5 +1,13 @@
 'use strict';
 
+
+
+/*
+ *  Controller of notification.html 
+ *  --> Page for: PARENT | manage notifications
+*/ 
+
+
 angular.module('deedoo').controller('notificationController', function ($rootScope, $scope, $state, config) {
 
     /*
