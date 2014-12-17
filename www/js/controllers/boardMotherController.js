@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('boardMotherController', function ($scope, $stateParams, $firebase, $state, config) {
+angular.module('deedoo').controller('boardMotherController', function ($scope, $stateParams, $firebase, $state, config, notification) {
 
     /*
      * Must be connect
@@ -58,6 +58,15 @@ angular.module('deedoo').controller('boardMotherController', function ($scope, $
         $scope.children = result.val();
     });
 
+    /*
+     * Notification for Tasks
+     */
+    refTasks.orderByChild('status').on('child_changed', function (result) {
+        if(result.val().id_room == $scope.idRoom){
+            notification.add('Une recommandation a été effectuée');
+        }
+    });
+
     // Tasks link with room
     tasks.$loaded().then(function (result) {
         for (var i = 0; i < result.length; i++) {
@@ -75,4 +84,5 @@ angular.module('deedoo').controller('boardMotherController', function ($scope, $
             $state.go('newTask');
         });
     };
+
 });

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('newTaskController', function ($rootScope, $scope, $state, $firebase, config) {
+angular.module('deedoo').controller('newTaskController', function ($rootScope, $scope, $state, $firebase, config, notification) {
 
     /*
      * If user is no connected -> Redirect to connect
@@ -137,8 +137,21 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
 
                     var refRoom = new Firebase(config.firebaseUrl + 'ROOM/' + roomId);
 
+                    /*
+                     * If BackgroundMode
+                     */
+                    cordova.plugins.backgroundMode.onactivate = function () {
+
+                        refRoom.orderByChild('status').on('child_changed', function () {
+                            notification.add('Votre demande de garde a été acceptée');
+                            $state.go('boardParent', {idRoom: roomId});
+                        });
+
+                    };
+                    /*
+                     * Else
+                     */
                     refRoom.orderByChild('status').on('child_changed', function () {
-                        console.log('Room Changed');
                         $state.go('boardParent', {idRoom: roomId});
                     });
 

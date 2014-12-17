@@ -7,7 +7,7 @@
 */ 
 
 
-angular.module('deedoo').controller('tutorialController', function ($scope, $state, localStorage, config) {
+angular.module('deedoo').controller('tutorialController', function ($scope, $state, localStorage, config, $timeout) {
 
     /*
      * If user already have Tutorial -> Redirect to connect

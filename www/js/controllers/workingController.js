@@ -24,6 +24,12 @@ angular.module('deedoo').controller('workingController', function ($scope, $root
         refTasks    = new Firebase(config.firebaseUrl + 'TASKS'),
         tasks       = $firebase(refTasks).$asArray();
 
+    /*
+     * If Parent change status to done
+     */
+    ref.orderByChild('status').on('child_changed', function () {
+        $state.go('tab.guards');
+    });
 
     $scope.working              = true;
     $scope.idRoom               = $stateParams.idRoom;

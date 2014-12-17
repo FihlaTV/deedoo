@@ -39,6 +39,18 @@
                         {
                             "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"LocalNotification\"><param name=\"ios-package\" value=\"LocalNotification\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<plugin name=\"LocalNotification\" value=\"LocalNotification\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BackgroundMode\"><param name=\"ios-package\" value=\"APPBackgroundMode\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -84,6 +96,12 @@
                             "xml": "<string />",
                             "count": 1
                         }
+                    ],
+                    "UIBackgroundModes": [
+                        {
+                            "xml": "<array><string>audio</string></array>",
+                            "count": 1
+                        }
                     ]
                 }
             }
@@ -103,6 +121,12 @@
             "PACKAGE_NAME": "com.ionicframework.deedoo120984"
         },
         "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.ionicframework.deedoo120984"
+        },
+        "jp.wizcorp.phonegap.plugin.localNotificationPlugin": {
+            "PACKAGE_NAME": "com.ionicframework.deedoo120984"
+        },
+        "de.appplant.cordova.plugin.background-mode": {
             "PACKAGE_NAME": "com.ionicframework.deedoo120984"
         }
     },

@@ -23,6 +23,18 @@
                         {
                             "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"jp.wizcorp.phonegap.plugin.localNotification.LocalNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BackgroundMode\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.background.BackgroundMode\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"KeepRunning\" value=\"true\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -32,6 +44,30 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<receiver android:name=\"jp.wizcorp.phonegap.plugin.localNotification.AlarmReceiver\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"jp.wizcorp.phonegap.plugin.localNotification.AlarmRestoreOnBoot\"><intent-filter><action android:name=\"android.intent.action.BOOT_COMPLETED\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"de.appplant.cordova.plugin.background.ForegroundService\" />",
                             "count": 1
                         }
                     ]
@@ -53,6 +89,12 @@
             "PACKAGE_NAME": "com.ionicframework.deedoo120984"
         },
         "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.ionicframework.deedoo120984"
+        },
+        "jp.wizcorp.phonegap.plugin.localNotificationPlugin": {
+            "PACKAGE_NAME": "com.ionicframework.deedoo120984"
+        },
+        "de.appplant.cordova.plugin.background-mode": {
             "PACKAGE_NAME": "com.ionicframework.deedoo120984"
         }
     },
