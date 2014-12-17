@@ -16,6 +16,9 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
         members = $firebase(ref).$asArray();
 
 
+    $scope.error = "";
+
+
     /*
      * Connect the USER
      */
@@ -28,8 +31,9 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
 
                 function searchUser(position)
                 {
-                    if( position < 0 )
-                        console.log('User not found');
+                    if( position < 0 ){
+                        $scope.error = 'Votre compte est introuvable';
+                    }
                     else if(members[position].mail == $scope.data.email 
                         && members[position].password == $filter('hash')($scope.data.password + config.sold)) 
                     {
@@ -47,6 +51,9 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
 
             });
 
+        }
+        else{
+            $scope.error = 'Merci de rentrer un identifiant et un mot de passe';
         }
 
     };

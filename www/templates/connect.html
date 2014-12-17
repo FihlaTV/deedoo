@@ -13,7 +13,7 @@
         <h1>Connexion</h1>
 
         <form ng-submit="connect()">
-
+            <p class="moreInformation" ng-show="error != ''">{{error}}</p>
             <div class="list">
                 <label class="item item-input">
                     <input type="email" placeholder="E-mail" ng-model="data.email">
