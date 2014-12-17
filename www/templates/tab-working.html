@@ -30,6 +30,22 @@
                 </label>
             </div>
 
+            <!-- Enfant(s) en train de dormir -->
+            <h2>
+                <span class="icon ion-ios-moon-outline"></span>
+                Enfant(s) en train de dormir
+            </h2>
+            <ul class="list">
+
+                <li class="item item-checkbox" ng-repeat="child in childrenSleeping">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-click="changeSleeping(child.name, $index)" ng-checked="child.sleeping">
+                    </label>
+                    {{child.name}}
+                </li>
+
+            </ul>
+
             <h2>
                 <span class="icon ion-ios-list-outline"></span>
                 Reste à faire

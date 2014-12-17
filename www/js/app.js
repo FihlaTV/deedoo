@@ -131,16 +131,6 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
-            // DODO (Babysitter)
-            .state('tab.dodo', {
-                url  : '/dodo',
-                views: {
-                    'tab-dodo@tab': {
-                        templateUrl: 'templates/tab-dodo.html'
-                    }
-                }
-            })
-
             // GUARDS (Babysitter)
             .state('tab.guards', {
                 url  : '/guards',
