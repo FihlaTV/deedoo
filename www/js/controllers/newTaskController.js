@@ -36,21 +36,21 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
         $rootScope.notifications    = [
             {
                 "added"    : false,
-                "title"    : "A fait prout",
+                "title"    : "Donner à manger aux enfants",
                 "children" : null,
                 'timeStart': "",
                 'timeEnd'  : ""
             },
             {
                 "added"    : false,
-                "title"    : "A fait pipi",
+                "title"    : "Mettre les enfants au lit",
                 "children" : null,
                 'timeStart': "",
                 'timeEnd'  : ""
             },
             {
                 "added"    : false,
-                "title"    : "A fait caca",
+                "title"    : "Faire la toilette des enfants",
                 "children" : null,
                 'timeStart': "",
                 'timeEnd'  : ""
