@@ -67,20 +67,16 @@ angular.module('deedoo').controller('workingController', function ($scope, $root
      * Change Status sleeping
      */
     $scope.changeSleeping = function (name, index) {
-        console.log('changeSleeping');
         var refRoom = new Firebase(config.firebaseUrl + 'ROOM/'+$stateParams.idRoom+'/children/'+index);
         var syncRoom = $firebase(refRoom);
         if($rootScope.childrenSleeping[index].sleeping){
-            console.log('false');
             syncRoom.$update({'sleeping': false});
             $rootScope.childrenSleeping[index].sleeping = false;
         }
         else{
-            console.log('true');
             syncRoom.$update({'sleeping': true});
             $rootScope.childrenSleeping[index].sleeping = true;
         }
-
     };
 
 });
