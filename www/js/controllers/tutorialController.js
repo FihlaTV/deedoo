@@ -1,5 +1,12 @@
 'use strict';
 
+
+/*
+ *  Controller of tutorial.html 
+ *  --> Page for: what or why Deedoo ?
+*/ 
+
+
 angular.module('deedoo').controller('tutorialController', function ($scope, $state, localStorage, config) {
 
     /*

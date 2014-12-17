@@ -1,5 +1,12 @@
 'use strict';
 
+
+/*
+ *  Controller of new_notification.html 
+ *  --> Page for: PARENT | Creation of custom notification
+*/ 
+
+
 angular.module('deedoo').controller('newNotificationController', function ($rootScope, $scope, $state, config) {
 
     /*

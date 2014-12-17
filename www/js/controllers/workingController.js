@@ -1,6 +1,17 @@
 'use strict';
 
+<<<<<<< HEAD
 angular.module('deedoo').controller('workingController', function ($scope, $rootScope, $stateParams, $firebase, $state, config) {
+=======
+
+/*
+ *  Controller of tab-working.html 
+ *  --> Page for: BABYSITTER | List of task of current babysitting
+*/ 
+
+
+angular.module('deedoo').controller('workingController', function ($scope, $stateParams, $firebase, $state, config) {
+>>>>>>> FETCH_HEAD
 
     /*
      * Must be connect

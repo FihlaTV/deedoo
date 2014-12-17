@@ -1,5 +1,12 @@
 'use strict';
 
+
+/*
+ *  Controller of connect.html 
+ *  --> Page for: PARENT & BABYSITTER | User connection 
+*/ 
+
+
 angular.module('deedoo').controller('loginController', function ($scope, $state, $filter, $firebase, config) {
 
     /*
@@ -14,19 +21,29 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
      */
     $scope.connect = function () {
 
-        if ($scope.data.email != null && $scope.data.password != null) {
+        if ($scope.data != undefined && $scope.data.email != null && $scope.data.password != null) {
 
             members.$loaded().then(function (result) {
+                var length = result.length-1;
 
-                for (var i = 0; i < result.length; i++) {
-
-                    if (members[i].mail == $scope.data.email && members[i].password == $filter('hash')($scope.data.password + config.sold)) {
-                        config.user     = members[i];
+                function searchUser(position)
+                {
+                    if( position < 0 )
+                        console.log('User not found');
+                    else if(members[position].mail == $scope.data.email 
+                        && members[position].password == $filter('hash')($scope.data.password + config.sold)) 
+                    {
+                        config.user     = members[position];
                         config.logged       = true;
-                        $state.go((members[i].type == 'parent') ? 'newTask' : 'tab.guards');
+                        $state.go((members[position].type == 'parent') ? 'newTask' : 'tab.guards');
                     }
-
+                    else
+                    {
+                        searchUser(position-1);
+                    }
                 }
+
+                searchUser(length);
 
             });
 
