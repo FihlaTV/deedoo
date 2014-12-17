@@ -15,20 +15,20 @@
         <div class="list">
             <!-- Date -->
             <label class="item">
-                <span class="informations">11 décembre 2014</span>
+                <span class="informations">{{data.date}}</span>
             </label>
             <!-- Time -->
             <label class="item">
-                <span class="informations">16:30-20:00</span>
+                <span class="informations">{{data.time_beginning + ' - ' + data.time_ending}}</span>
             </label>
             <!-- People -->
             <label class="item">
-                <span class="informations">Marion Cotillard</span>
+                <span class="informations">{{data.firstname_parent + ' ' + data.lastname_parent}}</span>
             </label>
             <br/>
             <!-- Children -->
             <label class="item">
-                <span class="informations">Paul et Léa</span>
+                <span class="informations">{{data.childrens}}</span>
             </label>
         </div>
 
