@@ -63,8 +63,7 @@ angular.module('deedoo').controller('boardMotherController', function ($scope, $
      * Notification for Tasks
      */
     refTasks.orderByChild('status').on('child_changed', function (result) {
-        if(result.val().id_room == $scope.idRoom && result.val().status==1)
-        {
+        if(result.val().id_room == $scope.idRoom && result.val().status==1){
             notification.add('Une recommandation a été effectuée');
         }
     });

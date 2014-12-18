@@ -26,8 +26,10 @@ angular.module('deedoo').controller('workingController', function ($scope, $root
     /*
      * If Parent change status to done
      */
-    ref.orderByChild('status').on('child_changed', function () {
-        $state.go('tab.guards');
+    ref.orderByChild('status').on('child_changed', function (result) {
+        if(result.val() == "done"){
+            $state.go('tab.guards');
+        }
     });
 
     $scope.working              = true;
@@ -83,8 +85,6 @@ angular.module('deedoo').controller('workingController', function ($scope, $root
             syncRoom.$update({'sleeping': true});
             $rootScope.childrenSleeping[index].sleeping = true;
         }
-
-        $state.go('tab.working', {idRoom: $scope.idRoom});
     };
 
 });

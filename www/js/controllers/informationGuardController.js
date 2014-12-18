@@ -31,19 +31,20 @@ angular.module('deedoo').controller('informationGuardController', function ($roo
             first           = true;
 
 
-        result.children.forEach(function(element, key, array)
-        {
-            if(first)
-            {
+        result.children.forEach(function(element, key, array) {
+
+            if(first){
                 childrens += element.name;
                 first = false;
             }
-            else
+            else{
                 childrens += ', ' + element.name;
+            }
+
         });
 
-        $scope.data = 
-        {
+        $scope.data = {
+
             'firstname_parent'    : result.firstname_parent,
             'lastname_parent'     : result.lastname_parent,
             'time_beginning'      : result.time_beginning,
@@ -51,8 +52,6 @@ angular.module('deedoo').controller('informationGuardController', function ($roo
             'date'                : result.date,
             'childrens'           : childrens
         };
-
-        console.log($scope.data);
 
     });
 
