@@ -62,6 +62,16 @@ angular.module('deedoo', ['ionic', 'firebase'])
                 }
             })
 
+            // Help
+            .state('help', {
+                url  : '/help',
+                views: {
+                    '': {
+                        templateUrl: 'templates/help.html'
+                    }
+                }
+            })
+
             // Connect Page
             .state('connect', {
                 url  : '/connect',
