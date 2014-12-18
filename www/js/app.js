@@ -13,14 +13,9 @@ angular.module('deedoo', ['ionic', 'firebase'])
             if (window.StatusBar) {
                 StatusBar.show();
             }
-            //setTimeout(function() {
-            //    navigator.splashscreen.hide();
-            //}, 3000);
-
             if(window.cordova){
                 cordova.plugins.backgroundMode.enable();
             }
-
         });
     })
     /*
@@ -31,7 +26,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
         'user'       : {},
         'logged'     : false,
         'sold'       : 'y47]htAA9)4yS&V',
-        'dev'        : true,
+        'dev'        : false,
         'idNotification': 1000
     })
 
