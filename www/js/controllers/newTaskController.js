@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('deedoo').controller('newTaskController', function ($rootScope, $scope, $state, $firebase, config, notification) {
+angular.module('deedoo').controller('newTaskController', function ($rootScope, $scope, $state, $firebase, $filter, config, notification) {
 
     /*
      * If user is no connected -> Redirect to connect
@@ -33,6 +33,7 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
         $rootScope.babysitters      = [];
         $rootScope.children         = {};
         $rootScope.newTaskForm      = {};
+        $rootScope.newTaskForm.date = $filter('date')(new Date(), 'MM/dd/yyyy');
         $rootScope.notifications    = [
             {
                 "added"    : false,
