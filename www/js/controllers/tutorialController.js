@@ -7,7 +7,7 @@
 */ 
 
 
-angular.module('deedoo').controller('tutorialController', function ($scope, $state, localStorage, config, $timeout) {
+angular.module('deedoo').controller('tutorialController', function ($scope, $state, localStorage, config) {
 
     /*
      * If user already have Tutorial -> Redirect to connect
@@ -24,6 +24,11 @@ angular.module('deedoo').controller('tutorialController', function ($scope, $sta
             }
 
         }
+    }
+    else{
+        if(config.user.type == 'babysitter'){
+            $state.go('tab.guards');
+        }  
     }
 
     /*
