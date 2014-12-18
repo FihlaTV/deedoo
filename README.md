@@ -1,9 +1,9 @@
 Deedoo
 ==========
 
-Confiez-votre enfant en toute sérénité grâce à Deedoo ! 
+Confiez votre enfant en toute sérénité grâce à Deedoo ! 
 L’application permet de créer un contact permanent entre vous, parents, et votre baby-sitter.
-Vous avez peur que votre baby-sitter oublie de donner à votre enfant ses médicaments ? de lui faire ses devoirs ? N’hésitez plus, Deedoo est fait pour vous !
+Vous avez peur que votre baby-sitter oublie de donner à votre enfant ses médicaments ? De lui faire ses devoirs ? N’hésitez plus, Deedoo est fait pour vous !
 
 ### Liens
 --------------------
@@ -13,10 +13,10 @@ Vous avez peur que votre baby-sitter oublie de donner à votre enfant ses médic
 #### L'EQUIPE
 | Nom  |  Rôle|
 | ------------- | ------------- |
-| Claire CANELL  | Chef de projet  |
+| Claire CANELLA  | Chef de projet  |
 | Valentin CHRÉTIEN  | Designer  |
-| Mathieu Le Tyrant  | Developpeur  |
-| Bernard VONG  | Developpeur  |
+| Mathieu LE TYRANT  | Développeur  |
+| Bernard VONG  | Développeur  |
 | Aina MAYET  | Intégrateur  |
 | Gwenaël BRANNE  | Rédacteur  |
 
