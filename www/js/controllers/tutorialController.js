@@ -14,7 +14,15 @@ angular.module('deedoo').controller('tutorialController', function ($scope, $sta
      */
     if (!config.dev) {
         if (localStorage.getTutorial()) {
-            $state.go('connect');
+            if(config.logged){
+                if(config.user.type == 'babysitter'){
+                    $state.go('tab.guards');
+                }
+            }
+            else{
+                $state.go('connect');
+            }
+
         }
     }
 

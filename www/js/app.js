@@ -134,7 +134,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
 
             // Working (Babysitter)
             .state('tab.working', {
-                url  : '/working/:idRoom',
+                url  : '/working/{idRoom}',
                 views: {
                     'tab-working@tab': {
                         templateUrl: 'templates/tab-working.html'
