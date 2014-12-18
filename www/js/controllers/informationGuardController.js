@@ -68,7 +68,7 @@ angular.module('deedoo').controller('informationGuardController', function ($roo
 
         }
         else {
-            console.log('Decliner');
+            $state.go('tab.guards');
         }
     };
 
