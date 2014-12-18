@@ -8,21 +8,20 @@ Vous avez peur que votre baby-sitter oublie de donner à votre enfant ses médic
 ### Liens
 --------------------
 * [Site WEB](A definir)
-* [Site pour émuler l'application mobile (Site local)](http://api.whoareyou.io)
+* [Site pour émuler l'application mobile (Site local)](http://deedoo.local:8100/ionic-lab)
 
 #### L'EQUIPE
 | Nom  |  Rôle|
 | ------------- | ------------- |
 | Claire CANELL  | Chef de projet  |
 | Valentin CHRÉTIEN  | Designer  |
-| Mathieu Le Tyrant  | Developpeur Mobile  |
+| Mathieu Le Tyrant  | Developpeur  |
 | Bernard VONG  | Developpeur  |
-| Aina MAYET  | Integrateur  |
-| Gwenaël BRANNE  | Integrateur  |
+| Aina MAYET  | Intégrateur  |
+| Gwenaël BRANNE  | Chargé de communication  |
 
 #### TECHNOLOGIES
-* Apache Cordova
-* Ionic
+* Apache Cordova (Ionic)
 * HTML 5 / CSS 3
 * AngularJS
 * Firebase
