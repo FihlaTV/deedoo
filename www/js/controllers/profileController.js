@@ -49,7 +49,6 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
                     'type'     : $scope.profilData.type,
                     'picture'  : $scope.profilData.picture
                 }).then(function () {
-                    console.log('Hey');
                 });
 
             }
