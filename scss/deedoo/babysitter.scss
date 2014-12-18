@@ -8,7 +8,6 @@
         border: none;
     }
     .no_guards {
-        font-family: 'Source Sans Pro', sans-serif;
         font-weight: 600;
         color: #929292;
         line-height: 8px;
@@ -16,7 +15,6 @@
         margin-top: 70%;
     }
     h2 {
-        font-family: 'Source Sans Pro', sans-serif;
         font-size: 1em;
         padding-left: 1.5em;
         padding-top: 1em;
@@ -25,27 +23,14 @@
         }
     }
     .informations {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 0.7em;
-        color: #929292;
-    }
-    .mathieulebg {
-        font-family: 'Source Sans Pro', sans-serif;
         font-size: 0.8em;
         color: #929292;
-        font-style: italic;
-        text-align: center;
-        margin-top: 3%;
-    }
-    .checkbox {
-        font-family: 'Source Sans Pro', sans-serif;
     }
 }
 
 .guards {
     background-color: $content;
     h2 {
-        font-family: 'Source Sans Pro', sans-serif;
         font-size: 1em;
         padding-left: 1.5em;
         padding-top: 1em;
@@ -57,7 +42,6 @@
         padding-left: 1.5em;
     }
     .time {
-        font-family: 'Source Sans Pro', sans-serif;
         font-size: 1.2em;
         color: #2E2E2E;
     }
@@ -84,7 +68,6 @@
         display: block;
         margin-top: 2em;
         .informations {
-            font-family: 'Source Sans Pro', sans-serif;
             font-size: 1em;
             color: #929292;
         }
