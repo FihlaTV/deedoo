@@ -26,7 +26,7 @@ angular.module('deedoo', ['ionic', 'firebase'])
         'user'       : {},
         'logged'     : false,
         'sold'       : 'y47]htAA9)4yS&V',
-        'dev'        : false,
+        'dev'        : true,
         'idNotification': 1000
     })
 
