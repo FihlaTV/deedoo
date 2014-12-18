@@ -47,6 +47,8 @@
         <ul class="list">
             <li class="item" ng-repeat="task in tasks" ng-if="task.status == 0">
                 {{task.message}}
+                <span ng-if="task.children">( <span
+                        ng-repeat="child in task.children">{{child}} </span>)</span>
                 <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
 
                 <p ng-if="task.time_beginning == null">Aucune heure définie</p>
@@ -64,6 +66,8 @@
                     <input type="checkbox" ng-checked="true">
                 </label>
                 {{task.message}}
+                <span ng-if="task.children">( <span
+                        ng-repeat="child in task.children">{{child}} </span>)</span>
                 <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
 
                 <p ng-if="task.time_beginning == null">Aucune heure définie</p>

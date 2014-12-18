@@ -58,6 +58,8 @@
                         <input type="checkbox" ng-click="confirmTask(task.$id, 0)" ng-checked="notification.added">
                     </label>
                     {{task.message}}
+                    <span ng-if="task.children">( <span
+                            ng-repeat="child in task.children">{{child}} </span>)</span>
                     <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
 
                     <p ng-if="task.time_beginning == null">Aucune heure définie</p>
@@ -77,6 +79,8 @@
                         <input type="checkbox" ng-click="confirmTask(task.$id, 1)" ng-checked="true">
                     </label>
                     {{task.message}}
+                    <span ng-if="task.children">( <span
+                            ng-repeat="child in task.children">{{child}} </span>)</span>
                     <p ng-if="task.time_beginning != null">{{task.time_beginning}}</p>
 
                     <p ng-if="task.time_beginning == null">Aucune heure définie</p>
