@@ -34,7 +34,7 @@ angular.module('deedoo').controller('loginController', function ($scope, $state,
                     if( position < 0 ){
                         $scope.error = 'Votre compte est introuvable';
                     }
-                    else if(members[position].mail == $scope.data.email 
+                    else if(members[position].mail == $filter('lowercase')($scope.data.email)
                         && members[position].password == $filter('hash')($scope.data.password + config.sold)) 
                     {
                         config.user     = members[position];
