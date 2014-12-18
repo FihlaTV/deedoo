@@ -91,6 +91,7 @@ $inputShift: 16px;
     font-size: 1.3em;
     text-align: center;
     line-height: 2em;
+    border: 1px solid $green;
     &:focus, &:active {
         background: #6AAB73;
     }
@@ -214,7 +215,12 @@ $inputShift: 16px;
         color: $green;
     }
 }
-
+.checkbox input:after, .checkbox-icon:after {
+    -moz-transform: rotate(-45deg) scale(0.8);
+    -webkit-transform: rotate(-45deg) scale(0.8);
+    transform: rotate(-45deg) scale(0.8);
+    border-width: 2px;
+}
 textarea {
     padding-top: 10px;
 }
