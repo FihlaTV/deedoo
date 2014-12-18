@@ -144,9 +144,11 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                     if (window.cordova){
                         cordova.plugins.backgroundMode.onactivate = function () {
 
-                            refRoom.orderByChild('status').on('child_changed', function () {
-                                notification.add('Votre demande de garde a été acceptée');
-                                $state.go('boardParent', {idRoom: roomId});
+                            refRoom.orderByChild('status').on('child_changed', function (result) {
+                                if(result.val() == true){
+                                    notification.add('Votre demande de garde a été acceptée');
+                                    $state.go('boardParent', {idRoom: roomId});
+                                }
                             });
 
                         };
@@ -155,8 +157,10 @@ angular.module('deedoo').controller('newTaskController', function ($rootScope, $
                     /*
                      * Else
                      */
-                    refRoom.orderByChild('status').on('child_changed', function () {
-                        $state.go('boardParent', {idRoom: roomId});
+                    refRoom.orderByChild('status').on('child_changed', function (result) {
+                        if(result.val()){
+                            $state.go('boardParent', {idRoom: roomId});
+                        }
                     });
 
                 });
