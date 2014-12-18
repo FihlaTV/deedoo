@@ -46,7 +46,7 @@ angular.module('deedoo').controller('profileController', function ($rootScope, $
                     'lastname' : $scope.profilData.lastname,
                     'mail'     : $scope.profilData.email,
                     'phone'    : $scope.profilData.phone,
-                    'type'     : $scope.profilData.type,
+                    /*'type'     : $scope.profilData.type,*/
                     'picture'  : $scope.profilData.picture
                 }).then(function () {
                     console.log('Hey');

@@ -29,7 +29,7 @@ angular.module('deedoo').controller('guardsController', function ($rootScope, $s
 
     rooms.$watch(function() {
         rooms.$loaded().then(function (result) {
-             $rootScope.guards = [];
+            $rootScope.guards = [];
             for (var i = 0; i < result.length; i++) {
 
                 if (rooms[i].id_babysitter == $scope.babysitter.$id) {

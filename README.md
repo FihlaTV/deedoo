@@ -18,7 +18,7 @@ Vous avez peur que votre baby-sitter oublie de donner à votre enfant ses médic
 | Mathieu Le Tyrant  | Developpeur  |
 | Bernard VONG  | Developpeur  |
 | Aina MAYET  | Intégrateur  |
-| Gwenaël BRANNE  | Chargé de communication  |
+| Gwenaël BRANNE  | Rédacteur  |
 
 #### TECHNOLOGIES
 * Apache Cordova (Ionic)
